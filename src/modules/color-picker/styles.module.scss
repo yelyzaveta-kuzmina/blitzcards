@@ -1,0 +1,17 @@
+.colorPreview {
+  display: flex;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: var(--background-color);
+  cursor: pointer;
+}
+
+.colorPickerContainer {
+  position: absolute;
+  top: 25px;
+  left: 50px;
+  z-index: 2;
+}
