@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss';
 
-const StartPageMottoBox = ({ title, subtitle }) => {
+const MottoBox = ({ title, subtitle }) => {
   return (
     <div className={styles.mottoBox}>
       <div className={styles.title}>{title}</div>
@@ -10,4 +10,4 @@ const StartPageMottoBox = ({ title, subtitle }) => {
   );
 };
 
-export default StartPageMottoBox;
+export default MottoBox;
