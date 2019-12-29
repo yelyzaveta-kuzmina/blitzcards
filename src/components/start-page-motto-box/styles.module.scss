@@ -1,0 +1,16 @@
+.mottoBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  .title {
+    font-size: 3em;
+    font-variant: small-caps;
+  }
+
+  .subtitle {
+    font-size: 1em;
+    letter-spacing: 0.5em;
+  }
+}
