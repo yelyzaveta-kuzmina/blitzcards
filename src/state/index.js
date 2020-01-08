@@ -1,13 +1,13 @@
-import React, { createContext } from 'react';
+import React, { createContext, useContext } from 'react';
 import { useCategories } from './categories';
 
-export const GameContext = createContext({});
+const AppStateContext = createContext(null);
 
-const GameProvider = ({ children }) => {
+export const AppStateProvider = ({ children }) => {
   const { categories, onCategoryAdd } = useCategories();
   const value = { categories, onCategoryAdd };
 
-  return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
+  return <AppStateContext.Provider value={value}>{children}</AppStateContext.Provider>;
 };
 
-export default GameProvider;
+export const useAppState = () => useContext(AppStateContext);

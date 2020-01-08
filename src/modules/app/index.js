@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useTheming } from '../../state/theming';
 import DisplayBox from '../../components/display-box';
+import StartPageButton from '../../components/start-page-button';
 import StartPage from '../start-page';
 import Categories from '../categories';
 import ColorPicker from '../../components/color-picker';
@@ -17,6 +18,7 @@ const Application = () => {
         onChange={({ hex }) => setBackgroundColor(hex)}
       />
       <DisplayBox>
+        <StartPageButton />
         <Switch>
           <Route path="/" exact component={StartPage} />
           <Route path="/categories" component={Categories} />

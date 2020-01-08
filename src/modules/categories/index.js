@@ -1,15 +1,19 @@
 import React from 'react';
-import { createCategoryButtonText } from './constants';
-import NewCategoryButton from '../../components/button';
-import StartPageButton from '../../components/start-page-button';
+import { useAppState } from '../../state';
+import NoCategoriesExist from './no-categories-exist';
+import styles from './styles.module.scss';
 
 const Categories = () => {
-  return (
-    <>
-      <StartPageButton />
-      <NewCategoryButton text={createCategoryButtonText} path="/new-category" />
-    </>
-  );
+  const { categories } = useAppState();
+
+  if (!categories) {
+    return (
+      <span className={styles.categoriesWrapper}>
+        <NoCategoriesExist />
+      </span>
+    );
+  }
+  return null;
 };
 
 export default Categories;

@@ -1,15 +1,15 @@
 import { useState, useCallback } from 'react';
 import uuidv4 from 'uuid/v4';
 
-const INITIAL_CATEGORIES = [];
-
 const getEmptyCategoryObject = () => ({
   id: uuidv4(),
   title: ''
 });
 
 export const useCategories = () => {
-  const [categories, setCategories] = useState(INITIAL_CATEGORIES);
+  const [categories, setCategories] = useState(null);
+
+  console.log(categories);
 
   const onCategoryAdd = useCallback(() => {
     const newCategory = getEmptyCategoryObject();

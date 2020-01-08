@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import GameProvider from './state';
+import { AppStateProvider } from './state';
 import ThemeProvider from './state/theming';
 import App from './modules/app';
 import './index.scss';
@@ -9,9 +9,9 @@ import './index.scss';
 ReactDOM.render(
   <Router>
     <ThemeProvider>
-      <GameProvider>
+      <AppStateProvider>
         <App />
-      </GameProvider>
+      </AppStateProvider>
     </ThemeProvider>
   </Router>,
   document.getElementById('root')
