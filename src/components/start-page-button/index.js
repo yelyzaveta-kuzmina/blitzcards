@@ -1,12 +1,17 @@
 import React from 'react';
 import { NavLink as Link } from 'react-router-dom';
-import lightningImg from './lightning.svg';
+import classNames from 'classnames';
+import LightningIcon from './lightning';
 import styles from './styles.module.scss';
 
-const StartPageButton = ({ onClick }) => {
+const StartPageButton = ({ className, onClick }) => {
   return (
     <Link exact to="/">
-      <img src={lightningImg} alt="lightning" className={styles.lightning} onClick={onClick} />
+      <div className={classNames(styles.button, className)}>
+        <div className={styles.lightning}>
+          <LightningIcon />
+        </div>
+      </div>
     </Link>
   );
 };

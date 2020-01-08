@@ -18,7 +18,7 @@ const Application = () => {
         onChange={({ hex }) => setBackgroundColor(hex)}
       />
       <DisplayBox>
-        <StartPageButton />
+        <StartPageButton className={styles.startPageButton} />
         <Switch>
           <Route path="/" exact component={StartPage} />
           <Route path="/categories" component={Categories} />
