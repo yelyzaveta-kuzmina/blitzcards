@@ -1,12 +1,20 @@
 .colorPreview {
   display: flex;
   position: relative;
+  padding: 5px;
+  box-sizing: border-box;
   width: 20px;
   height: 20px;
-  border-radius: 50%;
-  border: 1px solid white;
+  border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+  border: 1px solid #333;
+  transform: rotate(-45deg);
   background-color: var(--background-color);
   cursor: pointer;
+
+  &:hover {
+    zoom: 1.2;
+    zoom: transform 0.2s;
+  }
 }
 
 .colorPickerContainer {
