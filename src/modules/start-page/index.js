@@ -18,7 +18,7 @@ const StartPage = () => {
         onChange={({ hex }) => setBackgroundColor(hex)}
       /> */}
 
-      <SettingsButton onClick={() => null} />
+      <SettingsButton />
       <div className={styles.content}>
         <MottoBox title={TitleText} subtitle={SubtitleText} />
         <CategoriesButton text={CategoriesButtonText} path="./categories" />

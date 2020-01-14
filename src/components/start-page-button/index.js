@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import LightningIcon from './lightning';
 import styles from './styles.module.scss';
 
-const StartPageButton = ({ className, onClick }) => {
+const StartPageButton = ({ className }) => {
   return (
     <Link exact to="/">
       <div className={classNames(styles.button, className)}>
