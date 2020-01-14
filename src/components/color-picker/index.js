@@ -10,6 +10,7 @@ const ColorPicker = ({ className, color, onChange }) => {
 
   return (
     <div className={className}>
+      Color:
       <div
         className={styles.colorPreview}
         style={{ backgroundColor: color }}

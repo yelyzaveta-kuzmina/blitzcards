@@ -1,0 +1,37 @@
+.icon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 15px;
+  right: 15px;
+
+  .settings {
+    font-size: 28px;
+    color: #ededed;
+    animation: swirl-in-fwd 1.5s ease-out both;
+    cursor: pointer;
+
+    &:hover {
+      color: #fad163;
+      transition: color 0.2s;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s;
+  }
+}
+
+@keyframes swirl-in-fwd {
+  0% {
+    -webkit-transform: rotate(-540deg) scale(0);
+    transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
