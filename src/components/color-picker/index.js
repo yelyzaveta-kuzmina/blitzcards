@@ -16,7 +16,7 @@ const ColorPicker = ({ className, color, onChange, name }) => {
 
   return (
     <div className={className}>
-      {name}:
+      <span className={styles.propertyName}>{name}:</span>
       <OutsideClickHandler onOutsideClick={() => closeColorPicker()}>
         <div
           className={styles.colorPreview}

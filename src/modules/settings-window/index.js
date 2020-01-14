@@ -14,6 +14,18 @@ const SettingsWindow = () => {
         onChange={({ hex }) => setBackgroundColor(hex)}
         name={'Background color'}
       />
+      <ColorPicker
+        className={styles.colorPicker}
+        color={backgroundColor}
+        onChange={({ hex }) => setBackgroundColor(hex)}
+        name={'Display color'}
+      />
+      <ColorPicker
+        className={styles.colorPicker}
+        color={backgroundColor}
+        onChange={({ hex }) => setBackgroundColor(hex)}
+        name={'Text color'}
+      />
     </div>
   );
 };
