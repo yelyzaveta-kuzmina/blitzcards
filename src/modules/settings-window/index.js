@@ -1,23 +1,18 @@
-import React, { useState, useCallback } from 'react';
-import { useTheming } from '../../state/theming';
-import ColorPicker from '../../components/color-picker';
-import OutsideClickHandler from 'react-outside-click-handler';
+import React from 'react';
+import { useSettingsWindow } from './state';
+import ColorConfigurationView from './color-configuration-view';
 import styles from './styles.module.scss';
 
 const SettingsWindow = () => {
-  const [activeSetting, setActiveSetting] = useState(null);
-  const { backgroundColor, textColor, setBackgroundColor, setTextColor } = useTheming();
-
-  const onActiveSettingChange = useCallback(
-    (setting) => {
-      if (setting === activeSetting) {
-        setActiveSetting(null);
-        return;
-      }
-      setActiveSetting(setting);
-    },
-    [activeSetting]
-  );
+  const {
+    backgroundColor,
+    textColor,
+    activeSetting,
+    setActiveSetting,
+    setBackgroundColor,
+    setTextColor,
+    onActiveSettingChange
+  } = useSettingsWindow();
 
   return (
     <div className={styles.settingsWindow}>
@@ -52,17 +47,14 @@ const SettingsWindow = () => {
         </div>
       </div>
       <div className={styles.right}>
-        <OutsideClickHandler onOutsideClick={() => setActiveSetting(null)}>
-          {activeSetting === 'background-color' && (
-            <ColorPicker color={backgroundColor} onChange={({ hex }) => setBackgroundColor(hex)} />
-          )}
-          {activeSetting === 'text-color' && (
-            <ColorPicker color={textColor} onChange={({ hex }) => setTextColor(hex)} />
-          )}
-          {activeSetting === 'display-color' && (
-            <ColorPicker color={backgroundColor} onChange={({ hex }) => setBackgroundColor(hex)} />
-          )}
-        </OutsideClickHandler>
+        <ColorConfigurationView
+          backgroundColor={backgroundColor}
+          textColor={textColor}
+          activeSetting={activeSetting}
+          setActiveSetting={setActiveSetting}
+          setBackgroundColor={setBackgroundColor}
+          setTextColor={setTextColor}
+        />
       </div>
     </div>
   );
