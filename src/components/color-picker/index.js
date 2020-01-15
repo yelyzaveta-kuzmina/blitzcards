@@ -1,39 +1,8 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import { SketchPicker } from 'react-color';
-import OutsideClickHandler from 'react-outside-click-handler';
-import styles from './styles.module.scss';
 
-const ColorPicker = ({ className, color, onChange, name }) => {
-  const [isColorPickerVisible, setIsColorPickerVisible] = useState(false);
-
-  const toggleColorPickerVisibility = useCallback(() => {
-    setIsColorPickerVisible((visible) => !visible);
-  }, []);
-
-  const closeColorPicker = useCallback(() => {
-    setIsColorPickerVisible(false);
-  }, []);
-
-  return (
-    <div className={className}>
-      <span className={styles.propertyName}>{name}:</span>
-      <OutsideClickHandler onOutsideClick={() => closeColorPicker()}>
-        <div
-          className={styles.colorPreview}
-          style={{ backgroundColor: color }}
-          onClick={toggleColorPickerVisibility}
-        />
-        {isColorPickerVisible && (
-          <SketchPicker
-            disabled={true}
-            className={styles.colorPickerContainer}
-            color={color}
-            onChange={onChange}
-          />
-        )}
-      </OutsideClickHandler>
-    </div>
-  );
+const ColorPicker = ({ color, onChange }) => {
+  return <SketchPicker width={'20em'} color={color} onChange={onChange} />;
 };
 
 export default ColorPicker;
