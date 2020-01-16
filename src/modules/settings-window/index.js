@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSettingsWindow } from './state';
+import ColorPickerBlock from '../../components/color-picker-block';
 import ColorConfigurationView from './color-configuration-view';
 import styles from './styles.module.scss';
 
@@ -17,34 +18,21 @@ const SettingsWindow = () => {
   return (
     <div className={styles.settingsWindow}>
       <div className={styles.left}>
-        <div className={styles.colorPicker}>
-          <span className={styles.propertyName}>Background color:</span>
-          <div
-            className={styles.colorPreview}
-            style={{ backgroundColor: backgroundColor }}
-            onClick={() => onActiveSettingChange('background-color')}
-          />
-        </div>
-        <div className={styles.colorPicker}>
-          <span className={styles.propertyName}>Text color:</span>
-          <div
-            className={styles.colorPreview}
-            style={{ backgroundColor: textColor }}
-            onClick={() => onActiveSettingChange('text-color')}
-          />
-        </div>
-        <div className={styles.colorPicker}>
-          <span className={styles.propertyName}>Display color:</span>
-          <div
-            className={styles.colorPreview}
-            style={{ backgroundColor: backgroundColor }}
-            onClick={() => onActiveSettingChange('display-color')}
-          />
-        </div>
-        <div className={styles.colorPicker}>
-          <span className={styles.propertyName}>Font scaling factor:</span>
-          <div>1.2</div>
-        </div>
+        <ColorPickerBlock
+          propertyName={'Background color'}
+          style={{ backgroundColor: backgroundColor }}
+          onClick={() => onActiveSettingChange('background-color')}
+        />
+        <ColorPickerBlock
+          propertyName={'Text color'}
+          style={{ backgroundColor: textColor }}
+          onClick={() => onActiveSettingChange('text-color')}
+        />
+        <ColorPickerBlock
+          propertyName={'Display color'}
+          style={{ backgroundColor: backgroundColor }}
+          onClick={() => onActiveSettingChange('display-color')}
+        />
       </div>
       <div className={styles.right}>
         <ColorConfigurationView

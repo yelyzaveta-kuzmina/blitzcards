@@ -1,6 +1,6 @@
 import React from 'react';
 import OutsideClickHandler from 'react-outside-click-handler';
-import ColorPicker from '../../components/color-picker';
+import ColorPalette from '../../components/color-picker';
 
 const ColorConfigurationView = ({
   backgroundColor,
@@ -13,13 +13,13 @@ const ColorConfigurationView = ({
   return (
     <OutsideClickHandler onOutsideClick={() => setActiveSetting(null)}>
       {activeSetting === 'background-color' && (
-        <ColorPicker color={backgroundColor} onChange={({ hex }) => setBackgroundColor(hex)} />
+        <ColorPalette color={backgroundColor} onChange={({ hex }) => setBackgroundColor(hex)} />
       )}
       {activeSetting === 'text-color' && (
-        <ColorPicker color={textColor} onChange={({ hex }) => setTextColor(hex)} />
+        <ColorPalette color={textColor} onChange={({ hex }) => setTextColor(hex)} />
       )}
       {activeSetting === 'display-color' && (
-        <ColorPicker color={backgroundColor} onChange={({ hex }) => setBackgroundColor(hex)} />
+        <ColorPalette color={backgroundColor} onChange={({ hex }) => setBackgroundColor(hex)} />
       )}
     </OutsideClickHandler>
   );
