@@ -8,7 +8,7 @@ import styles from './styles.module.scss';
 const StartPage = () => {
   return (
     <>
-      <SettingsButton />
+      <SettingsButton to="/settings" />
       <div className={styles.content}>
         <MottoBox title={TitleText} subtitle={SubtitleText} />
         <LinkButton text={StartButtonText} to="./languages" />
