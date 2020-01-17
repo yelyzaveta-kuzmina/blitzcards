@@ -8,6 +8,18 @@
 
   .left {
     flex: 1;
+
+    .backgroundColorPreview {
+      background-color: var(--background-color);
+    }
+
+    .displayColorPreview {
+      background-color: var(--display-color);
+    }
+
+    .textColorPreview {
+      background-color: var(--text-color);
+    }
   }
 }
 

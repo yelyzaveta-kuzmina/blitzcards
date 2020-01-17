@@ -21,19 +21,22 @@ const SettingsWindow = () => {
     <div className={styles.settingsWindow}>
       <div className={styles.left}>
         <ColorPickerBlock
+          className={styles.backgroundColorPreview}
           propertyName={'Background color'}
           style={{ backgroundColor: backgroundColor }}
           onClick={() => onActiveSettingChange('background-color')}
         />
         <ColorPickerBlock
-          propertyName={'Text color'}
-          style={{ backgroundColor: textColor }}
-          onClick={() => onActiveSettingChange('text-color')}
-        />
-        <ColorPickerBlock
+          className={styles.displayColorPreview}
           propertyName={'Display color'}
           style={{ backgroundColor: displayColor }}
           onClick={() => onActiveSettingChange('display-color')}
+        />
+        <ColorPickerBlock
+          className={styles.textColorPreview}
+          propertyName={'Text color'}
+          style={{ backgroundColor: textColor }}
+          onClick={() => onActiveSettingChange('text-color')}
         />
       </div>
       <div className={styles.right}>

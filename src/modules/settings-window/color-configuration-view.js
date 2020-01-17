@@ -1,6 +1,5 @@
 import React from 'react';
 import OutsideClickHandler from 'react-outside-click-handler';
-// import ColorPalette from '../../components/color-picker-';
 import { SketchPicker } from 'react-color';
 
 const ColorConfigurationView = ({
@@ -13,7 +12,6 @@ const ColorConfigurationView = ({
   activeSetting,
   setActiveSetting
 }) => {
-  console.log(activeSetting);
   return (
     <OutsideClickHandler onOutsideClick={() => setActiveSetting(null)}>
       {activeSetting === 'background-color' && (

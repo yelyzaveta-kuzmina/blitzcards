@@ -1,11 +1,12 @@
 import React from 'react';
+import ClassName from 'classnames';
 import styles from './styles.module.scss';
 
-const ColorPickerBlock = ({ propertyName, style, onClick }) => {
+const ColorPickerBlock = ({ className, propertyName, style, onClick }) => {
   return (
     <div className={styles.colorPicker}>
       <span className={styles.propertyName}>{propertyName}:</span>
-      <div className={styles.colorPreview} style={style} onClick={onClick} />
+      <div className={ClassName(styles.colorPreview, className)} style={style} onClick={onClick} />
     </div>
   );
 };
