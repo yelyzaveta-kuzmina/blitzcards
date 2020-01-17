@@ -3,7 +3,14 @@ import { useTheming } from '../../state/theming';
 
 export const useSettingsWindow = () => {
   const [activeSetting, setActiveSetting] = useState(null);
-  const { backgroundColor, textColor, setBackgroundColor, setTextColor } = useTheming();
+  const {
+    backgroundColor,
+    textColor,
+    displayColor,
+    setBackgroundColor,
+    setTextColor,
+    setDisplayColor
+  } = useTheming();
 
   const onActiveSettingChange = useCallback(
     (setting) => {
@@ -20,9 +27,11 @@ export const useSettingsWindow = () => {
     activeSetting,
     backgroundColor,
     textColor,
+    displayColor,
     setActiveSetting,
     setBackgroundColor,
     setTextColor,
+    setDisplayColor,
     onActiveSettingChange
   };
 };

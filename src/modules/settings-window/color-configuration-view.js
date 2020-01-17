@@ -1,25 +1,37 @@
 import React from 'react';
 import OutsideClickHandler from 'react-outside-click-handler';
-import ColorPalette from '../../components/color-picker';
+// import ColorPalette from '../../components/color-picker-';
+import { SketchPicker } from 'react-color';
 
 const ColorConfigurationView = ({
   backgroundColor,
   textColor,
-  activeSetting,
-  setActiveSetting,
+  displayColor,
   setBackgroundColor,
-  setTextColor
+  setTextColor,
+  setDisplayColor,
+  activeSetting,
+  setActiveSetting
 }) => {
+  console.log(activeSetting);
   return (
     <OutsideClickHandler onOutsideClick={() => setActiveSetting(null)}>
       {activeSetting === 'background-color' && (
-        <ColorPalette color={backgroundColor} onChange={({ hex }) => setBackgroundColor(hex)} />
+        <SketchPicker
+          width={'20em'}
+          color={backgroundColor}
+          onChange={({ hex }) => setBackgroundColor(hex)}
+        />
       )}
       {activeSetting === 'text-color' && (
-        <ColorPalette color={textColor} onChange={({ hex }) => setTextColor(hex)} />
+        <SketchPicker width={'20em'} color={textColor} onChange={({ hex }) => setTextColor(hex)} />
       )}
       {activeSetting === 'display-color' && (
-        <ColorPalette color={backgroundColor} onChange={({ hex }) => setBackgroundColor(hex)} />
+        <SketchPicker
+          width={'20em'}
+          color={displayColor}
+          onChange={({ hex }) => setDisplayColor(hex)}
+        />
       )}
     </OutsideClickHandler>
   );

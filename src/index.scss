@@ -1,5 +1,7 @@
 :root {
   --background-color: #5d5abf;
+  --text-color: #333;
+  --display-color: white;
 }
 
 body {
@@ -12,5 +14,6 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: var(--background-color);
+  color: var(--text-color);
   margin: 0;
 }

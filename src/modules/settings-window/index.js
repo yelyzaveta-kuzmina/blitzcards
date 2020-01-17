@@ -8,10 +8,12 @@ const SettingsWindow = () => {
   const {
     backgroundColor,
     textColor,
+    displayColor,
     activeSetting,
     setActiveSetting,
     setBackgroundColor,
     setTextColor,
+    setDisplayColor,
     onActiveSettingChange
   } = useSettingsWindow();
 
@@ -30,7 +32,7 @@ const SettingsWindow = () => {
         />
         <ColorPickerBlock
           propertyName={'Display color'}
-          style={{ backgroundColor: backgroundColor }}
+          style={{ backgroundColor: displayColor }}
           onClick={() => onActiveSettingChange('display-color')}
         />
       </div>
@@ -38,10 +40,12 @@ const SettingsWindow = () => {
         <ColorConfigurationView
           backgroundColor={backgroundColor}
           textColor={textColor}
+          displayColor={displayColor}
           activeSetting={activeSetting}
           setActiveSetting={setActiveSetting}
           setBackgroundColor={setBackgroundColor}
           setTextColor={setTextColor}
+          setDisplayColor={setDisplayColor}
         />
       </div>
     </div>
