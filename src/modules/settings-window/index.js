@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSettingsWindow } from './state';
-import ColorPickerBlock from '../../components/color-picker-block';
+import ColorPickerBlock from './components/color-picker-block';
 import ColorConfigurationView from './color-configuration-view';
 import styles from './styles.module.scss';
 

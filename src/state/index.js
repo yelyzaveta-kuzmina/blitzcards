@@ -1,11 +1,11 @@
 import React, { createContext, useContext } from 'react';
-import { useCategories } from './categories';
+import { useLanguages } from './languages';
 
 const AppStateContext = createContext(null);
 
 export const AppStateProvider = ({ children }) => {
-  const { categories, onCategoryAdd } = useCategories();
-  const value = { categories, onCategoryAdd };
+  const { languages, onLanguageAdd } = useLanguages();
+  const value = { languages, onLanguageAdd };
 
   return <AppStateContext.Provider value={value}>{children}</AppStateContext.Provider>;
 };

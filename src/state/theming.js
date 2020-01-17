@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { setCssVariable } from '../utils/css';
 import {
   persistBackgroundColor,
   getPersistedBackgroundColor,
@@ -16,6 +17,10 @@ const persistedBackgroundColor = getPersistedBackgroundColor();
 const persistedTextColor = getPersistedTextColor();
 const persistedDisplayColor = getPersistedDisplayColor();
 
+setCssVariable('--background-color', persistBackgroundColor);
+setCssVariable('--text-color', persistTextColor);
+setCssVariable('--display-color', persistedDisplayColor);
+
 const ThemingContext = createContext({});
 
 const ThemingProvider = ({ children }) => {
@@ -26,17 +31,17 @@ const ThemingProvider = ({ children }) => {
   const [displayColor, setDisplayColor] = useState(persistedDisplayColor || DEFAULT_DISPLAY_COLOR);
 
   useEffect(() => {
-    document.documentElement.style.setProperty('--background-color', backgroundColor);
+    setCssVariable('--background-color', backgroundColor);
     persistBackgroundColor(backgroundColor);
   }, [backgroundColor]);
 
   useEffect(() => {
-    document.documentElement.style.setProperty('--text-color', textColor);
+    setCssVariable('--text-color', textColor);
     persistTextColor(textColor);
   }, [textColor]);
 
   useEffect(() => {
-    document.documentElement.style.setProperty('--display-color', displayColor);
+    setCssVariable('--display-color', displayColor);
     persistDisplayColor(displayColor);
   }, [displayColor]);
 
