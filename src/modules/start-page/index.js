@@ -1,5 +1,4 @@
 import React from 'react';
-import { TitleText, SubtitleText, StartButtonText } from './constants';
 import SettingsButton from './components/settings-button';
 import MottoBox from './components/motto-box';
 import LinkButton from '../../components/link-button';
@@ -10,8 +9,8 @@ const StartPage = () => {
     <>
       <SettingsButton to="/settings" />
       <div className={styles.content}>
-        <MottoBox title={TitleText} subtitle={SubtitleText} />
-        <LinkButton text={StartButtonText} to="./languages" />
+        <MottoBox title={'discover, store, memorize!'} subtitle={'Learn new words every day'} />
+        <LinkButton text={'start'} to="./languages" />
       </div>
     </>
   );
