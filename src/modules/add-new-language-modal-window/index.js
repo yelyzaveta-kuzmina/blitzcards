@@ -5,8 +5,8 @@ import styles from './styles.module.scss';
 const AddNewLanguageModalWindow = () => {
   return (
     <div className={styles.wrapper}>
-      <Input placeholder={'What language do you want to learn?'} onChange={null} />
-      <Input placeholder={'What will be the source language?'} onChange={null} />
+      <Input placeholder={'Which language do you want to learn?'} title={'To'} onChange={null} />
+      <Input placeholder={'What will be the source language?'} title={'From'} onChange={null} />
       {/* <div>
         <span>What language do you want to learn?</span>
         <input />
