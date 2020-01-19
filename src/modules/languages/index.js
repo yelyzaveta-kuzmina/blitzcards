@@ -8,9 +8,9 @@ const Languages = () => {
 
   if (!languages) {
     return (
-      <span className={styles.languagesWrapper}>
+      <div className={styles.languagesWrapper}>
         <NoLanguagesExist />
-      </span>
+      </div>
     );
   }
   return null;

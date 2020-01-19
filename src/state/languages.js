@@ -3,7 +3,8 @@ import uuidv4 from 'uuid/v4';
 
 const getEmptyLanguageObject = () => ({
   id: uuidv4(),
-  title: ''
+  languageTo: '',
+  languageFrom: ''
 });
 
 export const useLanguages = () => {
