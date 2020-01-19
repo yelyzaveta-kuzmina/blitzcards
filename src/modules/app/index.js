@@ -11,7 +11,7 @@ const Application = () => {
   return (
     <>
       <DisplayBox>
-        <StartPageButton className={styles.startPageButton} />
+        <StartPageButton className={styles.startPageButton} to="/" />
         <Switch>
           <Route path="/" exact component={StartPage} />
           <Route path="/languages" component={Languages} />

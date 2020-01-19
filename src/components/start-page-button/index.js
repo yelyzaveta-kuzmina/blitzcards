@@ -1,18 +1,22 @@
-import React from 'react';
-import { NavLink as Link } from 'react-router-dom';
-import classNames from 'classnames';
+import React, { useCallback } from 'react';
+import { useHistory } from 'react-router-dom';
 import LightningIcon from './lightning';
+import classNames from 'classnames';
 import styles from './styles.module.scss';
 
-const StartPageButton = ({ className }) => {
+const StartPageButton = ({ to, className }) => {
+  const history = useHistory();
+
+  const onClick = useCallback(() => {
+    history.push(to);
+  }, [to, history]);
+
   return (
-    <Link exact to="/">
-      <div className={classNames(styles.button, className)}>
-        <div className={styles.lightning}>
-          <LightningIcon />
-        </div>
+    <div className={classNames(styles.button, className)}>
+      <div className={styles.lightning} onClick={onClick}>
+        <LightningIcon />
       </div>
-    </Link>
+    </div>
   );
 };
 
