@@ -3,6 +3,7 @@
   align-items: center;
   width: 55%;
   height: 10%;
+  margin-bottom: 2em;
 
   .title {
     margin-right: 2em;
@@ -35,9 +36,5 @@
         transition: color 0.3s linear;
       }
     }
-  }
-
-  &:not(:last-of-type) {
-    margin-bottom: 2em;
   }
 }
