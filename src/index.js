@@ -7,7 +7,7 @@ import App from './modules/app';
 import './index.scss';
 
 ReactDOM.render(
-  <Router>
+  <Router basename="/blitzcards">
     <ThemeProvider>
       <AppStateProvider>
         <App />

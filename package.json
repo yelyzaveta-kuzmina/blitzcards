@@ -1,5 +1,6 @@
 {
   "name": "blitzcards",
+  "homepage": "https://yelyzaveta-kuzmina.github.io/blitzcards/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +11,7 @@
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "classnames": "^2.2.6",
+    "gh-pages": "^2.2.0",
     "i": "^0.3.6",
     "node-sass": "^4.13.0",
     "npm": "^6.13.6",
@@ -24,6 +26,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
