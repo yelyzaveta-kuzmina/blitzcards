@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/blitzcards/static/css/main.58c97d8e.chunk.css",
+    "main.js": "/blitzcards/static/js/main.43d9f1b4.chunk.js",
+    "main.js.map": "/blitzcards/static/js/main.43d9f1b4.chunk.js.map",
+    "runtime-main.js": "/blitzcards/static/js/runtime-main.84cf8f9d.js",
+    "runtime-main.js.map": "/blitzcards/static/js/runtime-main.84cf8f9d.js.map",
+    "static/js/2.11af10a9.chunk.js": "/blitzcards/static/js/2.11af10a9.chunk.js",
+    "static/js/2.11af10a9.chunk.js.map": "/blitzcards/static/js/2.11af10a9.chunk.js.map",
+    "index.html": "/blitzcards/index.html",
+    "precache-manifest.d37689840bd62ff201718284fdd7d3ff.js": "/blitzcards/precache-manifest.d37689840bd62ff201718284fdd7d3ff.js",
+    "service-worker.js": "/blitzcards/service-worker.js",
+    "static/css/main.58c97d8e.chunk.css.map": "/blitzcards/static/css/main.58c97d8e.chunk.css.map",
+    "static/js/2.11af10a9.chunk.js.LICENSE": "/blitzcards/static/js/2.11af10a9.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.84cf8f9d.js",
+    "static/js/2.11af10a9.chunk.js",
+    "static/css/main.58c97d8e.chunk.css",
+    "static/js/main.43d9f1b4.chunk.js"
+  ]
+}
