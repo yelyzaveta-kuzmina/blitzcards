@@ -2,10 +2,12 @@ import React from 'react';
 import Input from '../../components/input';
 import Button from '../../components/button';
 import useNewLanguageModalWindow from './state';
+import useLanguages from '../../state/languages';
 import styles from './styles.module.scss';
 
 const AddNewLanguageModalWindow = ({ setNewLanguageModalOpen }) => {
-  const { inputHandleChange } = useNewLanguageModalWindow();
+  const { inputValue, inputHandleChange } = useNewLanguageModalWindow();
+  const { onLanguageAdd } = useLanguages();
 
   return (
     <div className={styles.blockWrapper}>
@@ -24,7 +26,7 @@ const AddNewLanguageModalWindow = ({ setNewLanguageModalOpen }) => {
           onChange={(event) => inputHandleChange(event)}
         />
       </div>
-      <Button text={'submit'} className={styles.button} />
+      <Button text={'submit'} className={styles.button} onClick={() => onLanguageAdd(inputValue)} />
     </div>
   );
 };

@@ -5,10 +5,10 @@ import NoLanguagesExist from './no-languages-exist';
 const Languages = () => {
   const { languages } = useAppState();
 
-  if (!languages) {
+  if (languages.length === 0) {
     return <NoLanguagesExist />;
   }
-  return;
+  return null;
 };
 
 export default Languages;

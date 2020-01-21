@@ -1,21 +1,13 @@
-import { useState, useCallback } from 'react';
-import uuidv4 from 'uuid/v4';
-
-const getEmptyLanguageObject = () => ({
-  id: uuidv4(),
-  languageTo: '',
-  languageFrom: ''
-});
+import { useState } from 'react';
 
 export const useLanguages = () => {
-  const [languages, setLanguages] = useState(null);
+  const [languages, setLanguages] = useState([]);
 
   console.log(languages);
 
-  const onLanguageAdd = useCallback(() => {
-    const newLanguage = getEmptyLanguageObject();
-    setLanguages([...languages, newLanguage]);
-  }, [languages, setLanguages]);
+  const onLanguageAdd = (language) => {
+    setLanguages([...languages, language]);
+  };
 
   return { languages, onLanguageAdd };
 };
