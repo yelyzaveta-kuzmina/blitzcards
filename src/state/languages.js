@@ -1,15 +1,22 @@
-import { useState } from 'react';
+import React, { createContext, useContext, useState, useCallback } from 'react';
 
-export const useLanguages = () => {
+const LanguagesContext = createContext({});
+
+const LanguagesProvider = ({ children }) => {
   const [languages, setLanguages] = useState([]);
 
-  console.log(languages);
+  const onLanguageAdd = useCallback((language) => {
+    setLanguages((languages) => [...languages, language]);
+  }, []);
 
-  const onLanguageAdd = (language) => {
-    setLanguages([...languages, language]);
+  const value = {
+    languages,
+    onLanguageAdd
   };
 
-  return { languages, onLanguageAdd };
+  return <LanguagesContext.Provider value={value}>{children}</LanguagesContext.Provider>;
 };
 
-export default useLanguages;
+export const useLanguages = () => useContext(LanguagesContext);
+
+export default LanguagesProvider;
