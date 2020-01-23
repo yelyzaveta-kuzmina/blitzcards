@@ -1,12 +1,20 @@
 import React from 'react';
 import { useLanguages } from '../../../state/languages';
-// import styles from './styles.module.scss';
+import useNewLanguageModalWindow from '../../add-new-language-modal-window/state';
+import AddNewLanguageButton from '../components/new-language-button';
+import AddNewLanguageModalWindow from '../../add-new-language-modal-window';
+import styles from './styles.module.scss';
 
 const LanguagesExist = () => {
   const { languages } = useLanguages();
+  const { isNewLanguageModalOpen, setNewLanguageModalOpen } = useNewLanguageModalWindow();
 
   return (
-    <div>
+    <div className={styles.existingLanguagesWrapper}>
+      {isNewLanguageModalOpen && (
+        <AddNewLanguageModalWindow onClose={() => setNewLanguageModalOpen(false)} />
+      )}
+      <AddNewLanguageButton onClick={() => setNewLanguageModalOpen(true)} />
       {languages.map((language, index) => (
         <div key={index}>{language.targetLanguage}</div>
       ))}
