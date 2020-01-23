@@ -14,6 +14,8 @@ const LanguagesProvider = ({ children }) => {
     onLanguageAdd
   };
 
+  console.log(languages);
+
   return <LanguagesContext.Provider value={value}>{children}</LanguagesContext.Provider>;
 };
 
