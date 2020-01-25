@@ -8,6 +8,8 @@ const StartPageAsync = lazy(() => import('../start-page'));
 const LanguagesAsync = lazy(() => import('../languages'));
 const SettingsWindowAsync = lazy(() => import('../settings-window'));
 
+const Language = ({ match }) => <div>selected language: {match.params.language}</div>;
+
 const Application = () => {
   return (
     <DisplayBox>
@@ -16,6 +18,7 @@ const Application = () => {
         <Switch>
           <Route path="/" exact component={StartPageAsync} />
           <Route path="/languages" component={LanguagesAsync} />
+          <Route path="/language/:language" component={Language} />
           <Route path="/settings" component={SettingsWindowAsync} />
         </Switch>
       </Suspense>

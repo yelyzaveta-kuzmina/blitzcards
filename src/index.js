@@ -9,7 +9,7 @@ import './index.scss';
 import 'normalize.css';
 
 ReactDOM.render(
-  <Router basename="/blitzcards">
+  <Router basename="/blitzcards" hashType="noslash">
     <ThemeProvider>
       <LanguagesProvider>
         <AppStateProvider>

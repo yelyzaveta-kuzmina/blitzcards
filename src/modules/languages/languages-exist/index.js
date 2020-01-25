@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { useLanguages } from '../../../state/languages';
 import useNewLanguageModalWindow from '../../add-new-language-modal-window/state';
 import AddNewLanguageButton from '../components/new-language-button';
@@ -20,9 +21,12 @@ const LanguagesExist = () => {
       />
       <div className={styles.existingLanguagesRow}>
         {languages.map((language, index) => (
-          <div key={index} className={styles.existingLanguage}>
+          <NavLink
+            to={`/language/${language.targetLanguage}`}
+            key={index}
+            className={styles.existingLanguage}>
             {language.targetLanguage}
-          </div>
+          </NavLink>
         ))}
       </div>
     </>
