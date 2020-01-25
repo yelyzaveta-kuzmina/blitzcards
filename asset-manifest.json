@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/blitzcards/static/css/main.23833acb.chunk.css",
+    "main.css": "/blitzcards/static/css/main.18837eb2.chunk.css",
     "main.js": "/blitzcards/static/js/main.4f660bfe.chunk.js",
     "main.js.map": "/blitzcards/static/js/main.4f660bfe.chunk.js.map",
-    "runtime-main.js": "/blitzcards/static/js/runtime-main.51e9005e.js",
-    "runtime-main.js.map": "/blitzcards/static/js/runtime-main.51e9005e.js.map",
+    "runtime-main.js": "/blitzcards/static/js/runtime-main.1fdfc60c.js",
+    "runtime-main.js.map": "/blitzcards/static/js/runtime-main.1fdfc60c.js.map",
     "static/js/2.240ce635.chunk.js": "/blitzcards/static/js/2.240ce635.chunk.js",
     "static/js/2.240ce635.chunk.js.map": "/blitzcards/static/js/2.240ce635.chunk.js.map",
     "static/js/3.f12f0c55.chunk.js": "/blitzcards/static/js/3.f12f0c55.chunk.js",
     "static/js/3.f12f0c55.chunk.js.map": "/blitzcards/static/js/3.f12f0c55.chunk.js.map",
-    "static/css/4.6c784726.chunk.css": "/blitzcards/static/css/4.6c784726.chunk.css",
-    "static/js/4.40b55c82.chunk.js": "/blitzcards/static/js/4.40b55c82.chunk.js",
-    "static/js/4.40b55c82.chunk.js.map": "/blitzcards/static/js/4.40b55c82.chunk.js.map",
+    "static/css/4.b97116c3.chunk.css": "/blitzcards/static/css/4.b97116c3.chunk.css",
+    "static/js/4.78684564.chunk.js": "/blitzcards/static/js/4.78684564.chunk.js",
+    "static/js/4.78684564.chunk.js.map": "/blitzcards/static/js/4.78684564.chunk.js.map",
     "static/css/5.e02749c9.chunk.css": "/blitzcards/static/css/5.e02749c9.chunk.css",
     "static/js/5.ab7e2651.chunk.js": "/blitzcards/static/js/5.ab7e2651.chunk.js",
     "static/js/5.ab7e2651.chunk.js.map": "/blitzcards/static/js/5.ab7e2651.chunk.js.map",
@@ -21,18 +21,18 @@
     "static/js/7.17c48c9e.chunk.js": "/blitzcards/static/js/7.17c48c9e.chunk.js",
     "static/js/7.17c48c9e.chunk.js.map": "/blitzcards/static/js/7.17c48c9e.chunk.js.map",
     "index.html": "/blitzcards/index.html",
-    "precache-manifest.35059038c419aa172989705379996a0b.js": "/blitzcards/precache-manifest.35059038c419aa172989705379996a0b.js",
+    "precache-manifest.5545bf2a94bbfc3b9fd5460a40321577.js": "/blitzcards/precache-manifest.5545bf2a94bbfc3b9fd5460a40321577.js",
     "service-worker.js": "/blitzcards/service-worker.js",
-    "static/css/4.6c784726.chunk.css.map": "/blitzcards/static/css/4.6c784726.chunk.css.map",
+    "static/css/4.b97116c3.chunk.css.map": "/blitzcards/static/css/4.b97116c3.chunk.css.map",
     "static/css/5.e02749c9.chunk.css.map": "/blitzcards/static/css/5.e02749c9.chunk.css.map",
     "static/css/7.520b02dd.chunk.css.map": "/blitzcards/static/css/7.520b02dd.chunk.css.map",
-    "static/css/main.23833acb.chunk.css.map": "/blitzcards/static/css/main.23833acb.chunk.css.map",
+    "static/css/main.18837eb2.chunk.css.map": "/blitzcards/static/css/main.18837eb2.chunk.css.map",
     "static/js/3.f12f0c55.chunk.js.LICENSE": "/blitzcards/static/js/3.f12f0c55.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.51e9005e.js",
+    "static/js/runtime-main.1fdfc60c.js",
     "static/js/3.f12f0c55.chunk.js",
-    "static/css/main.23833acb.chunk.css",
+    "static/css/main.18837eb2.chunk.css",
     "static/js/main.4f660bfe.chunk.js"
   ]
 }
