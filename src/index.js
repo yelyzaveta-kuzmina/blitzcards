@@ -6,6 +6,7 @@ import ThemeProvider from './state/theming';
 import LanguagesProvider from './state/languages';
 import App from './modules/app';
 import './index.scss';
+import 'normalize.css';
 
 ReactDOM.render(
   <Router basename="/blitzcards">

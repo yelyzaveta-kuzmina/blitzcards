@@ -31,7 +31,7 @@
       display: block;
       border-bottom: solid 1px darkgrey;
       transform: scaleX(0);
-      transition: transform 0.5s linear;
+      transition: transform 0.2s linear;
     }
 
     &:hover::after {
