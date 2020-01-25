@@ -13,7 +13,10 @@ const NoLanguagesExist = () => {
         <AddNewLanguageModalWindow onClose={() => setNewLanguageModalOpen(false)} />
       )}
       <div className={styles.title}>{'it is a good time to start learning some language'}</div>
-      <AddNewLanguageButton onClick={() => setNewLanguageModalOpen(true)} />
+      <AddNewLanguageButton
+        className={styles.button}
+        onClick={() => setNewLanguageModalOpen(true)}
+      />
     </>
   );
 };

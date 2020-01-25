@@ -1,13 +1,21 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
+import { persistLanguage, getPersistedLanguage } from '../modules/languages/utils/local-storage';
+
+const initialLanguages = getPersistedLanguage();
 
 const LanguagesContext = createContext({});
 
 const LanguagesProvider = ({ children }) => {
-  const [languages, setLanguages] = useState([]);
+  const [languages, setLanguages] = useState(initialLanguages);
 
   const onLanguageAdd = useCallback((language) => {
     setLanguages((languages) => [...languages, language]);
+    persistLanguage(language);
   }, []);
+
+  useEffect(() => {
+    persistLanguage(languages);
+  }, [languages]);
 
   const value = {
     languages,

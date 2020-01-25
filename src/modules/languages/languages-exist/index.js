@@ -14,10 +14,17 @@ const LanguagesExist = () => {
       {isNewLanguageModalOpen && (
         <AddNewLanguageModalWindow onClose={() => setNewLanguageModalOpen(false)} />
       )}
-      <AddNewLanguageButton onClick={() => setNewLanguageModalOpen(true)} />
-      {languages.map((language, index) => (
-        <div key={index}>{language.targetLanguage}</div>
-      ))}
+      <AddNewLanguageButton
+        className={styles.button}
+        onClick={() => setNewLanguageModalOpen(true)}
+      />
+      <div className={styles.existingLanguagesRow}>
+        {languages.map((language, index) => (
+          <div key={index} className={styles.existingLanguage}>
+            {language.targetLanguage}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
