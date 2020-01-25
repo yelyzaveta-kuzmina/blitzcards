@@ -10,7 +10,7 @@ const LanguagesExist = () => {
   const { isNewLanguageModalOpen, setNewLanguageModalOpen } = useNewLanguageModalWindow();
 
   return (
-    <div className={styles.existingLanguagesWrapper}>
+    <>
       {isNewLanguageModalOpen && (
         <AddNewLanguageModalWindow onClose={() => setNewLanguageModalOpen(false)} />
       )}
@@ -25,7 +25,7 @@ const LanguagesExist = () => {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
