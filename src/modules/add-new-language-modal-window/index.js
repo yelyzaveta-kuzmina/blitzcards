@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import Input from '../../components/input';
 import Button from '../../components/button';
 import useNewLanguageModalWindow from './state';
-import { useLanguages } from '../../state/languages';
+import { useLanguages } from '../languages/state';
 import styles from './styles.module.scss';
 
 const AddNewLanguageModalWindow = ({ onClose }) => {

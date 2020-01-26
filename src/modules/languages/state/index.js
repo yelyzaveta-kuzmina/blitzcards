@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
-import { persistLanguage, getPersistedLanguage } from '../modules/languages/utils/local-storage';
+import { persistLanguage, getPersistedLanguage } from '../utils/local-storage';
 
 const initialLanguages = getPersistedLanguage();
 

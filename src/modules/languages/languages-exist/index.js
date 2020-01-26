@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useLanguages } from '../../../state/languages';
+import { useLanguages } from '../state';
 import useNewLanguageModalWindow from '../../add-new-language-modal-window/state';
 import AddNewLanguageButton from '../components/new-language-button';
 import AddNewLanguageModalWindow from '../../add-new-language-modal-window';

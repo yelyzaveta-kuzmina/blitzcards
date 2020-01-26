@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLanguages } from '../../state/languages';
+import { useLanguages } from './state';
 import NoLanguagesExist from './no-languages-exist';
 import LanguagesExist from './languages-exist';
 
