@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useLanguages } from '../state';
 import useNewLanguageModalWindow from '../../add-new-language-modal-window/state';
-import AddNewLanguageButton from '../components/new-language-button';
+import Button from '../../../components/button';
 import AddNewLanguageModalWindow from '../../add-new-language-modal-window';
 import styles from './styles.module.scss';
 
@@ -15,7 +15,8 @@ const LanguagesExist = () => {
       {isNewLanguageModalOpen && (
         <AddNewLanguageModalWindow onClose={() => setNewLanguageModalOpen(false)} />
       )}
-      <AddNewLanguageButton
+      <Button
+        text={'add new language'}
         className={styles.button}
         onClick={() => setNewLanguageModalOpen(true)}
       />

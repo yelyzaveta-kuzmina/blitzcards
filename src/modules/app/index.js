@@ -6,9 +6,8 @@ import styles from './styles.module.scss';
 
 const StartPageAsync = lazy(() => import('../start-page'));
 const LanguagesAsync = lazy(() => import('../languages'));
+const SelectedLanguageAsync = lazy(() => import('../selected-language'));
 const SettingsWindowAsync = lazy(() => import('../settings-window'));
-
-const Language = ({ match }) => <div>selected language: {match.params.language}</div>;
 
 const Application = () => {
   return (
@@ -18,7 +17,7 @@ const Application = () => {
         <Switch>
           <Route path="/" exact component={StartPageAsync} />
           <Route path="/languages" component={LanguagesAsync} />
-          <Route path="/language/:language" component={Language} />
+          <Route path="/language/:language" component={SelectedLanguageAsync} />
           <Route path="/settings" component={SettingsWindowAsync} />
         </Switch>
       </Suspense>

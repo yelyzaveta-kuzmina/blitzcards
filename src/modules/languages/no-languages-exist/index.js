@@ -1,6 +1,6 @@
 import React from 'react';
 import AddNewLanguageModalWindow from '../../add-new-language-modal-window';
-import AddNewLanguageButton from '../components/new-language-button';
+import Button from '../../../components/button';
 import useNewLanguageModalWindow from '../../add-new-language-modal-window/state';
 import styles from './styles.module.scss';
 
@@ -13,7 +13,8 @@ const NoLanguagesExist = () => {
         <AddNewLanguageModalWindow onClose={() => setNewLanguageModalOpen(false)} />
       )}
       <div className={styles.title}>{'it is a good time to start learning some language'}</div>
-      <AddNewLanguageButton
+      <Button
+        text={'add new language'}
         className={styles.button}
         onClick={() => setNewLanguageModalOpen(true)}
       />
