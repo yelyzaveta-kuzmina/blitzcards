@@ -26,7 +26,10 @@ const LanguagesExist = () => {
             to={`/language/${language.targetLanguage}`}
             key={index}
             className={styles.existingLanguage}>
-            {language.targetLanguage}
+            <div className={styles.languagesPairBox}>
+              <span className={styles.targetLanguage}>{language.targetLanguage}</span>
+              <span className={styles.sourceLanguage}>{language.sourceLanguage}</span>
+            </div>
           </NavLink>
         ))}
       </div>

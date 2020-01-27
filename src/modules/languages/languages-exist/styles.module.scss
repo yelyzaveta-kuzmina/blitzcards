@@ -15,9 +15,8 @@
   margin: auto;
 
   .existingLanguage {
-    height: 2em;
-    line-height: 2em;
-    box-sizing: border-box;
+    line-height: 1.5em;
+    padding: 0.5em;
     margin-right: 1em;
     margin-bottom: 1.5em;
     color: inherit;
@@ -25,23 +24,25 @@
     cursor: pointer;
 
     &:hover {
-      color: black;
-    }
-
-    &::after {
-      content: '';
-      display: block;
-      border-bottom: solid 1px darkgrey;
-      transform: scaleX(0);
-      transition: transform 0.2s linear;
-    }
-
-    &:hover::after {
-      transform: scaleX(1);
+      background-color: #fafafa;
     }
 
     &:last-of-type {
       margin-right: 0px;
+    }
+
+    .languagesPairBox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &:hover .targetLanguage {
+        color: black;
+      }
+
+      .sourceLanguage {
+        font-size: 0.7em;
+      }
     }
   }
 }
