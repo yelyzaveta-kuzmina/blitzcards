@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import LoadingComponent from '../../components/suspense-loading';
 import DisplayBox from '../../components/display-box';
 import StartPageButton from '../../components/start-page-button';
 import styles from './styles.module.scss';
@@ -13,7 +14,7 @@ const Application = () => {
   return (
     <DisplayBox>
       <StartPageButton className={styles.startPageButton} to="/" />
-      <Suspense fallback="Loading...">
+      <Suspense fallback={<LoadingComponent />}>
         <Switch>
           <Route path="/" exact component={StartPageAsync} />
           <Route path="/languages" component={LanguagesAsync} />
