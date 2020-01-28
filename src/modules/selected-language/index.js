@@ -14,8 +14,6 @@ const SelectedLanguage = () => {
     (category) => category.categoryBelongsToLanguage === language
   );
 
-  console.log(categories);
-
   return (
     <>
       {isNewCategoryModalOpen && (

@@ -1,20 +1,25 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
+import { persistCategory, getPersistedCategory } from './utils/local-storage';
+
+const initialCategories = getPersistedCategory();
 
 const CategoriesContext = createContext({});
 
 const CategoriesProvider = ({ children }) => {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState(initialCategories);
 
   const onCategoryAdd = useCallback((category) => {
     setCategories((categories) => [...categories, category]);
   }, []);
 
+  useEffect(() => {
+    persistCategory(categories);
+  }, [categories]);
+
   const value = {
     categories,
     onCategoryAdd
   };
-
-  console.log(categories);
 
   return <CategoriesContext.Provider value={value}>{children}</CategoriesContext.Provider>;
 };

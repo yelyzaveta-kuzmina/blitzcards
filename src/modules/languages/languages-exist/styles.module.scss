@@ -16,15 +16,17 @@
 
   .existingLanguage {
     line-height: 1.5em;
-    padding: 0.5em;
+    padding: 1em;
     margin-right: 1em;
     margin-bottom: 1.5em;
     color: inherit;
     text-decoration: inherit;
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.03);
 
     &:hover {
-      background-color: #fafafa;
+      background-color: rgba(0, 0, 0, 0.06);
+      transition: background-color 0.09s linear;
     }
 
     &:last-of-type {
@@ -35,10 +37,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-
-      &:hover .targetLanguage {
-        color: black;
-      }
 
       .sourceLanguage {
         font-size: 0.7em;
