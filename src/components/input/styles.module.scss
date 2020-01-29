@@ -13,18 +13,22 @@
     outline: none;
     border: none;
     margin-left: 2em;
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1px solid var(--text-color-light);
     font-size: 1em;
     font-family: inherit;
     font-variant: small-caps;
     letter-spacing: 0.2em;
 
+    &::placeholder {
+      color: var(--text-color-light);
+    }
+
     &:focus {
       transition: border-bottom 0.3s linear;
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid var(--text-color);
 
       &::placeholder {
-        color: #333;
+        color: var(--text-color);
         transition: color 0.3s linear;
       }
     }
