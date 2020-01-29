@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d2737a35d0076f3ca0725f0573c31bf8",
+    "revision": "c26c2b00881d4f1d1881001ed3d7498b",
     "url": "/blitzcards/index.html"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/blitzcards/static/css/5.ae500d31.chunk.css"
   },
   {
-    "revision": "d4d314ff274802b54998",
-    "url": "/blitzcards/static/css/6.501ce279.chunk.css"
+    "revision": "06c41c3c58c63a0526eb",
+    "url": "/blitzcards/static/css/6.aafc793e.chunk.css"
   },
   {
     "revision": "265a802decf6e478cb3d",
@@ -48,8 +48,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/blitzcards/static/js/5.a65a93ab.chunk.js"
   },
   {
-    "revision": "d4d314ff274802b54998",
-    "url": "/blitzcards/static/js/6.866e082d.chunk.js"
+    "revision": "06c41c3c58c63a0526eb",
+    "url": "/blitzcards/static/js/6.777149c1.chunk.js"
   },
   {
     "revision": "3fcb20c4a2b1da105c19",
@@ -64,7 +64,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/blitzcards/static/js/main.1086bfd9.chunk.js"
   },
   {
-    "revision": "512cac15ff56c61880c0",
-    "url": "/blitzcards/static/js/runtime-main.c9705909.js"
+    "revision": "db55cadab697af76a906",
+    "url": "/blitzcards/static/js/runtime-main.85ed4356.js"
   }
 ]);
