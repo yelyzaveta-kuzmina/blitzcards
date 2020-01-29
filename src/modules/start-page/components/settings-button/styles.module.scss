@@ -1,13 +1,13 @@
-.icon {
+.iconWrapper {
   position: absolute;
   width: 30px;
   height: 30px;
   top: 15px;
   right: 15px;
 
-  .settings {
+  .settingsIcon {
     font-size: 28px;
-    color: #ededed;
+    color: lightgrey;
     animation: swirl-in-fwd 1.5s ease-out both;
     cursor: pointer;
 

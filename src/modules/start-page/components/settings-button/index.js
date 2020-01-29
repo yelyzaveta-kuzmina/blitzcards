@@ -13,9 +13,9 @@ const SettingsButton = ({ to, activeClassName }) => {
   }, [to, history]);
 
   return (
-    <div className={styles.icon}>
+    <div className={styles.iconWrapper}>
       <FontAwesomeIcon
-        className={classname(activeClassName, styles.settings)}
+        className={classname(activeClassName, styles.settingsIcon)}
         onClick={onClick}
         icon={faCog}
       />
