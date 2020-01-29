@@ -21,7 +21,25 @@
 }
 
 .content {
-  flex: 1;
-  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
+  margin: auto;
+
+  .category {
+    line-height: 1.5em;
+    padding: 1em;
+    margin-right: 1em;
+    margin-bottom: 1.5em;
+    color: inherit;
+    text-decoration: inherit;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.03);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.06);
+      transition: background-color 0.09s linear;
+    }
+  }
 }

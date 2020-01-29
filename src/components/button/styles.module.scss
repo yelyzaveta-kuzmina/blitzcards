@@ -2,7 +2,9 @@
   font-family: inherit;
   font-variant: small-caps;
   letter-spacing: 0.2em;
-  border: 1px solid lightgrey;
+  border: 1px solid var(--text-color-light);
+  color: var(--text-color);
+
   background-color: transparent;
   outline: none;
   cursor: pointer;
@@ -13,7 +15,8 @@
 
   &:hover {
     transition: border-color linear 0.4s;
-    border-color: black;
+    border-color: var(--text-color);
+    color: --text-color;
   }
 
   &:hover .text {

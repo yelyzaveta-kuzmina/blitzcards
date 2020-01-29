@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import color from 'color';
 import { setCssVariable } from '../utils/css';
 import {
   persistBackgroundColor,
@@ -15,10 +16,14 @@ const DEFAULT_DISPLAY_COLOR = 'white';
 
 const persistedBackgroundColor = getPersistedBackgroundColor();
 const persistedTextColor = getPersistedTextColor();
+const lighterTextColor = color(persistTextColor)
+  .lighten(0.3)
+  .toString();
 const persistedDisplayColor = getPersistedDisplayColor();
 
 setCssVariable('--background-color', persistBackgroundColor);
 setCssVariable('--text-color', persistTextColor);
+setCssVariable('--text-color-light', lighterTextColor);
 setCssVariable('--display-color', persistedDisplayColor);
 
 const ThemingContext = createContext({});
@@ -36,7 +41,11 @@ const ThemingProvider = ({ children }) => {
   }, [backgroundColor]);
 
   useEffect(() => {
+    const lighterTextColor = color(textColor)
+      .lighten(0.3)
+      .toString();
     setCssVariable('--text-color', textColor);
+    setCssVariable('--text-color-light', lighterTextColor);
     persistTextColor(textColor);
   }, [textColor]);
 

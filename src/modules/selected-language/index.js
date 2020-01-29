@@ -32,7 +32,9 @@ const SelectedLanguage = () => {
       </div>
       <div className={styles.content}>
         {filteredCategories.map((category, index) => (
-          <div key={index}>{category.categoryName}</div>
+          <div key={index} className={styles.category}>
+            {category.categoryName}
+          </div>
         ))}
       </div>
     </>
