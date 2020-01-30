@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useRouteMatch } from 'react-router-dom';
 import { useCategories } from '../categories/state';
 import AddNewCategoryModalWindow from '../add-new-category-modal-window';
@@ -32,9 +33,12 @@ const SelectedLanguage = () => {
       </div>
       <div className={styles.content}>
         {filteredCategories.map((category, index) => (
-          <div key={index} className={styles.category}>
+          <NavLink
+            to={`/language/${language}/${category.categoryName}`}
+            key={index}
+            className={styles.category}>
             {category.categoryName}
-          </div>
+          </NavLink>
         ))}
       </div>
     </>
@@ -42,3 +46,5 @@ const SelectedLanguage = () => {
 };
 
 export default SelectedLanguage;
+
+// "/language/:language/category/:category"

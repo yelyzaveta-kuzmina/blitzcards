@@ -8,6 +8,7 @@ import styles from './styles.module.scss';
 const StartPageAsync = lazy(() => import('../start-page'));
 const LanguagesAsync = lazy(() => import('../languages'));
 const SelectedLanguageAsync = lazy(() => import('../selected-language'));
+const SelectedCategoryAsync = lazy(() => import('../selected-category'));
 const SettingsWindowAsync = lazy(() => import('../settings-window'));
 
 const Application = () => {
@@ -18,6 +19,7 @@ const Application = () => {
         <Switch>
           <Route path="/" exact component={StartPageAsync} />
           <Route path="/languages" component={LanguagesAsync} />
+          <Route path="/language/:language/:category" component={SelectedCategoryAsync} />
           <Route path="/language/:language" component={SelectedLanguageAsync} />
           <Route path="/settings" component={SettingsWindowAsync} />
         </Switch>
