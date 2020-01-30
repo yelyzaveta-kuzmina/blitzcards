@@ -10,7 +10,7 @@ export const persistBackgroundColor = (color) =>
 
 export const getPersistedBackgroundColor = () => {
   const json = localStorage.getItem('background-color');
-  return safeParse(json, []);
+  return safeParse(json);
 };
 
 export const persistTextColor = (color) =>
@@ -18,7 +18,7 @@ export const persistTextColor = (color) =>
 
 export const getPersistedTextColor = () => {
   const json = localStorage.getItem('text-color');
-  return safeParse(json, []);
+  return safeParse(json);
 };
 
 export const persistDisplayColor = (color) =>
@@ -26,5 +26,5 @@ export const persistDisplayColor = (color) =>
 
 export const getPersistedDisplayColor = () => {
   const json = localStorage.getItem('display-color');
-  return safeParse(json, []);
+  return safeParse(json);
 };

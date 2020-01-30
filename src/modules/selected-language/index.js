@@ -46,5 +46,3 @@ const SelectedLanguage = () => {
 };
 
 export default SelectedLanguage;
-
-// "/language/:language/category/:category"

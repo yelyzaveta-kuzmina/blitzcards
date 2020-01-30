@@ -11,12 +11,12 @@ import {
 } from '../utils/local-storage';
 
 const DEFAULT_BACKGRONUD_COLOR = '#5d5abf';
-const DEFAULT_TEXT_COLOR = '#333';
+const DEFAULT_TEXT_COLOR = '#7b7676';
 const DEFAULT_DISPLAY_COLOR = 'white';
 
 const persistedBackgroundColor = getPersistedBackgroundColor();
 const persistedTextColor = getPersistedTextColor();
-const lighterTextColor = color(persistTextColor)
+const lighterTextColor = color(persistedTextColor)
   .lighten(0.3)
   .toString();
 const persistedDisplayColor = getPersistedDisplayColor();
