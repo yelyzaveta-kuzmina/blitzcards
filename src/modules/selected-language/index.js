@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useRouteMatch } from 'react-router-dom';
 import { useCategories } from '../categories/state';
-import Button from '../../components/button';
-import NoItemsExist from '../../components/no-items-exist';
+import NoItemsExist from '../../components/items-dependent/no-items-exist';
+import ItemsExist from '../../components/items-dependent/items-exist';
 import AddNewCategoryModalWindow from '../add-new-category-modal-window';
 import styles from './styles.module.scss';
 
@@ -26,21 +26,16 @@ const SelectedLanguage = () => {
       )}
       {filteredCategories.length === 0 ? (
         <NoItemsExist
-          title={`Let's create a new category for ${language} language!`}
+          title={`Let's create a new category for ${language}!`}
           buttonText={'add new category'}
           onClick={() => setNewCategoryModalOpen(true)}
         />
       ) : (
         <>
-          <div className={styles.selectedLanguageHeader}>
-            <div className={styles.selectedLanguageTitle}>{language}</div>
-            <Button
-              text={'add new category'}
-              className={styles.button}
-              onClick={() => setNewCategoryModalOpen(true)}
-            />
-          </div>
-          <div className={styles.content}>
+          <ItemsExist
+            title={language}
+            buttonText={'add new category'}
+            onClick={() => setNewCategoryModalOpen(true)}>
             {filteredCategories.map((category, index) => (
               <NavLink
                 to={`/language/${language}/${category.categoryName}`}
@@ -49,7 +44,7 @@ const SelectedLanguage = () => {
                 {category.categoryName}
               </NavLink>
             ))}
-          </div>
+          </ItemsExist>
         </>
       )}
     </>

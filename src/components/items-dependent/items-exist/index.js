@@ -7,7 +7,7 @@ const ItemsExist = ({ title, buttonText, onClick, children }) => {
     <>
       <div className={styles.header}>
         <div className={styles.title}>{title}</div>
-        <Button text={buttonText} className={styles.button} onClick={() => onClick} />
+        <Button text={buttonText} className={styles.button} onClick={onClick} />
       </div>
       <div className={styles.content}>{children}</div>
     </>
