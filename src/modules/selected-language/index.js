@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useRouteMatch } from 'react-router-dom';
 import { useCategories } from '../categories/state';
 import AddNewCategoryModalWindow from '../add-new-category-modal-window';
+import NoItemsExist from '../../components/no-items-exist';
 import Button from '../../components/button';
 import styles from './styles.module.scss';
 
@@ -23,24 +24,34 @@ const SelectedLanguage = () => {
           language={language}
         />
       )}
-      <div className={styles.selectedLanguageHeader}>
-        <div className={styles.selectedLanguageTitle}>{language}</div>
-        <Button
-          text={'add new category'}
-          className={styles.button}
+      {filteredCategories.length === 0 ? (
+        <NoItemsExist
+          title={`Let's create a new category for ${language} language!`}
+          buttonText={'add new category'}
           onClick={() => setNewCategoryModalOpen(true)}
         />
-      </div>
-      <div className={styles.content}>
-        {filteredCategories.map((category, index) => (
-          <NavLink
-            to={`/language/${language}/${category.categoryName}`}
-            key={index}
-            className={styles.category}>
-            {category.categoryName}
-          </NavLink>
-        ))}
-      </div>
+      ) : (
+        <>
+          <div className={styles.selectedLanguageHeader}>
+            <div className={styles.selectedLanguageTitle}>{language}</div>
+            <Button
+              text={'add new category'}
+              className={styles.button}
+              onClick={() => setNewCategoryModalOpen(true)}
+            />
+          </div>
+          <div className={styles.content}>
+            {filteredCategories.map((category, index) => (
+              <NavLink
+                to={`/language/${language}/${category.categoryName}`}
+                key={index}
+                className={styles.category}>
+                {category.categoryName}
+              </NavLink>
+            ))}
+          </div>
+        </>
+      )}
     </>
   );
 };
