@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useRouteMatch } from 'react-router-dom';
 import { useCategories } from '../categories/state';
-import AddNewCategoryModalWindow from '../add-new-category-modal-window';
-import NoItemsExist from '../../components/no-items-exist';
 import Button from '../../components/button';
+import NoItemsExist from '../../components/no-items-exist';
+import AddNewCategoryModalWindow from '../add-new-category-modal-window';
 import styles from './styles.module.scss';
 
 const SelectedLanguage = () => {

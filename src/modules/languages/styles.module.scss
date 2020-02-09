@@ -1,60 +1,29 @@
-.header {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+.existingLanguage {
+  line-height: 1.5em;
+  padding: 1em;
+  margin-right: 1em;
+  margin-bottom: 1.5em;
+  color: inherit;
+  text-decoration: inherit;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.03);
 
-  .title {
-    flex: 1;
-    align-self: center;
-    font-variant: small-caps;
-    font-size: 1.3em;
-    letter-spacing: 0.2em;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+    transition: background-color 0.09s linear;
   }
 
-  .button {
-    width: 12em;
-    height: 3em;
-    padding: 0.3em;
-    font-size: 0.7em;
-    align-self: flex-end;
+  &:last-of-type {
+    margin-right: 0px;
   }
-}
 
-.existingLanguagesRow {
-  flex: 0 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
+  .languagesPairBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  .existingLanguage {
-    line-height: 1.5em;
-    padding: 1em;
-    margin-right: 1em;
-    margin-bottom: 1.5em;
-    color: inherit;
-    text-decoration: inherit;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.03);
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.06);
-      transition: background-color 0.09s linear;
-    }
-
-    &:last-of-type {
-      margin-right: 0px;
-    }
-
-    .languagesPairBox {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .sourceLanguage {
-        font-size: 0.7em;
-      }
+    .sourceLanguage {
+      font-size: 0.7em;
     }
   }
 }
