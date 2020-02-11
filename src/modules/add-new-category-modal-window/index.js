@@ -5,14 +5,17 @@ import Button from '../../components/button';
 import useNewCategoryModalWindow from './state';
 import styles from './styles.module.scss';
 
-const AddNewCategoryModalWindow = ({ onClose, language }) => {
-  const { categoryInputValue, inputHandleChange } = useNewCategoryModalWindow(language);
+const AddNewCategoryModalWindow = ({ onClose, language, targetLanguage }) => {
+  const { categoryInputValue, inputHandleChange } = useNewCategoryModalWindow({
+    language,
+    targetLanguage
+  });
   const { onCategoryAdd } = useCategories();
 
   const onSubmit = useCallback(() => {
-    onCategoryAdd(categoryInputValue);
+    onCategoryAdd(categoryInputValue, targetLanguage);
     onClose();
-  }, [categoryInputValue, onClose, onCategoryAdd]);
+  }, [categoryInputValue, targetLanguage, onClose, onCategoryAdd]);
 
   return (
     <div className={styles.blockWrapper}>

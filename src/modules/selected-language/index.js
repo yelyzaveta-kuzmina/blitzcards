@@ -8,12 +8,14 @@ import AddNewCategoryModalWindow from '../add-new-category-modal-window';
 import styles from './styles.module.scss';
 
 const SelectedLanguage = () => {
-  const { language } = useRouteMatch().params;
+  const { language, targetLanguage } = useRouteMatch().params;
+  console.log({ targetLanguage });
   const [isNewCategoryModalOpen, setNewCategoryModalOpen] = useState(false);
   const { categories } = useCategories();
 
   const filteredCategories = categories.filter(
-    (category) => category.categoryBelongsToLanguage === language
+    (category) =>
+      category.categoryBelongsToLanguage === language && category.targetLanguage === targetLanguage
   );
 
   return (
@@ -22,30 +24,33 @@ const SelectedLanguage = () => {
         <AddNewCategoryModalWindow
           onClose={() => setNewCategoryModalOpen(false)}
           language={language}
+          targetLanguage={targetLanguage}
         />
       )}
       {filteredCategories.length === 0 ? (
         <NoItemsExist
-          title={`Let's create a new category for ${language}!`}
+          title={
+            <>
+              Let's create a new category for <b>{language}</b>!
+            </>
+          }
           buttonText={'add new category'}
           onClick={() => setNewCategoryModalOpen(true)}
         />
       ) : (
-        <>
-          <ItemsExist
-            title={language}
-            buttonText={'add new category'}
-            onClick={() => setNewCategoryModalOpen(true)}>
-            {filteredCategories.map((category, index) => (
-              <NavLink
-                to={`/language/${language}/${category.categoryName}`}
-                key={index}
-                className={styles.category}>
-                {category.categoryName}
-              </NavLink>
-            ))}
-          </ItemsExist>
-        </>
+        <ItemsExist
+          title={language}
+          buttonText={'add new category'}
+          onClick={() => setNewCategoryModalOpen(true)}>
+          {filteredCategories.map((category, index) => (
+            <NavLink
+              to={`/${language}/${category.categoryName}`}
+              key={index}
+              className={styles.category}>
+              {category.categoryName}
+            </NavLink>
+          ))}
+        </ItemsExist>
       )}
     </>
   );

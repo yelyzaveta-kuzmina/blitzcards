@@ -5,6 +5,7 @@ import AppStateProvider from './state';
 import ThemeProvider from './state/theming';
 import LanguagesProvider from './modules/languages/state';
 import CategoriesProvider from './modules/categories/state';
+import WordsProvider from './modules/words/state';
 import App from './modules/app';
 import './index.scss';
 import 'normalize.css';
@@ -14,9 +15,11 @@ ReactDOM.render(
     <ThemeProvider>
       <LanguagesProvider>
         <CategoriesProvider>
-          <AppStateProvider>
-            <App />
-          </AppStateProvider>
+          <WordsProvider>
+            <AppStateProvider>
+              <App />
+            </AppStateProvider>
+          </WordsProvider>
         </CategoriesProvider>
       </LanguagesProvider>
     </ThemeProvider>

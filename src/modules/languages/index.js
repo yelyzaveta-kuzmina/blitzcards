@@ -30,7 +30,7 @@ const Languages = () => {
             onClick={() => setNewLanguageModalOpen(true)}>
             {languages.map((language, index) => (
               <NavLink
-                to={`/language/${language.targetLanguage}`}
+                to={`/${language.targetLanguage}/${language.sourceLanguage}`}
                 key={index}
                 className={styles.existingLanguage}>
                 <div className={styles.languagesPairBox}>
