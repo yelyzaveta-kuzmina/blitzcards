@@ -1,2 +1,0 @@
-(this.webpackJsonpblitzcards=this.webpackJsonpblitzcards||[]).push([[9],{348:function(t,e,n){"use strict";n.r(e);var a=n(0),c=n.n(a);e.default=function(){return c.a.createElement("div",null,c.a.createElement("div",null,"123"))}}}]);
-//# sourceMappingURL=9.83e58967.chunk.js.map
