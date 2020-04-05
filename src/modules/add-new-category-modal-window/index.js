@@ -1,21 +1,27 @@
 import React, { useCallback } from 'react';
-import { useCategories } from '../categories/state';
 import Input from '../../components/input';
 import Button from '../../components/button';
 import useNewCategoryModalWindow from './state';
 import styles from './styles.module.scss';
 
-const AddNewCategoryModalWindow = ({ onClose, language, targetLanguage }) => {
-  const { categoryInputValue, inputHandleChange } = useNewCategoryModalWindow({
-    language,
-    targetLanguage
-  });
-  const { onCategoryAdd } = useCategories();
+const AddNewCategoryModalWindow = ({ onClose, languageId }) => {
+  const {
+    categoryInputValue,
+    setCategoryInputValue,
+    onCategorySubmit
+  } = useNewCategoryModalWindow({ languageId });
 
   const onSubmit = useCallback(() => {
-    onCategoryAdd(categoryInputValue, targetLanguage);
+    onCategorySubmit();
     onClose();
-  }, [categoryInputValue, targetLanguage, onClose, onCategoryAdd]);
+  }, [onClose, onCategorySubmit]);
+
+  const onCategoryNameChange = useCallback(
+    (event) => {
+      setCategoryInputValue(event.target.value);
+    },
+    [setCategoryInputValue]
+  );
 
   return (
     <div className={styles.blockWrapper}>
@@ -25,8 +31,9 @@ const AddNewCategoryModalWindow = ({ onClose, language, targetLanguage }) => {
       <div className={styles.inputsWrapper}>
         <Input
           placeholder={'Name of the category'}
-          name={'categoryName'}
-          onChange={inputHandleChange}
+          name="name"
+          value={categoryInputValue}
+          onChange={onCategoryNameChange}
         />
       </div>
       <Button text={'submit'} className={styles.button} onClick={onSubmit} />

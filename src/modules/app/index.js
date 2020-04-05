@@ -19,8 +19,8 @@ const Application = () => {
         <Switch>
           <Route path="/" exact component={StartPageAsync} />
           <Route path="/languages" component={LanguagesAsync} />
-          <Route path="/:language/:targetLanguage/:category" component={SelectedCategoryAsync} />
-          <Route path="/:language/:targetLanguage" component={SelectedLanguageAsync} />
+          <Route path="/:sourceLanguage-:targetLanguage/:category" component={SelectedCategoryAsync} />
+          <Route path="/:sourceLanguage-:targetLanguage" component={SelectedLanguageAsync} />
           <Route path="/settings" component={SettingsWindowAsync} />
         </Switch>
       </Suspense>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useLanguages } from './state';
+import { useLanguages } from '../../state/languages';
 import useNewLanguageModalWindow from '../add-new-language-modal-window/state';
 import AddNewLanguageModalWindow from '../add-new-language-modal-window';
 import NoItemsExist from '../../components/items-dependent/no-items-exist';
@@ -26,11 +26,11 @@ const Languages = () => {
         <>
           <ItemsExist
             title={'Languages'}
-            buttonText={'add new category'}
+            buttonText={'add new language'}
             onClick={() => setNewLanguageModalOpen(true)}>
             {languages.map((language, index) => (
               <NavLink
-                to={`/${language.targetLanguage}/${language.sourceLanguage}`}
+                to={`/${language.sourceLanguage}-${language.targetLanguage}`}
                 key={index}
                 className={styles.existingLanguage}>
                 <div className={styles.languagesPairBox}>

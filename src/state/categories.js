@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
-import { persistCategory, getPersistedCategory } from './utils/local-storage';
+import { persistCategory, getPersistedCategory } from '../modules/categories/utils/local-storage';
+import { uuid } from 'uuidv4';
 
 const initialCategories = getPersistedCategory();
 
@@ -9,7 +10,11 @@ const CategoriesProvider = ({ children }) => {
   const [categories, setCategories] = useState(initialCategories);
 
   const onCategoryAdd = useCallback((category) => {
-    setCategories((categories) => [...categories, category]);
+    const newCategory = {
+      id: uuid(),
+      ...category
+    };
+    setCategories((categories) => [...categories, newCategory]);
   }, []);
 
   useEffect(() => {

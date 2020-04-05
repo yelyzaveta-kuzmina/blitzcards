@@ -1,24 +1,21 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
+import { useCategories } from '../../state/categories';
 
-export const useNewCategoryModalWindow = ({ language, targetLanguage }) => {
-  const [isNewCategoryModalOpen, setNewCategoryModalOpen] = useState(false);
-  const [categoryInputValue, setCategoryInputValue] = useState({
-    categoryBelongsToLanguage: language,
-    targetLanguage
-  });
+export const useNewCategoryModalWindow = ({ languageId }) => {
+  const { onCategoryAdd } = useCategories();
+  const [categoryInputValue, setCategoryInputValue] = useState('');
 
-  const inputHandleChange = (event) => {
-    const name = event.target.name;
-    const newValue = event.target.value;
-    setCategoryInputValue((state) => ({ ...state, [name]: newValue }));
-  };
+  const onCategorySubmit = useCallback(() => {
+    onCategoryAdd({
+      languageId,
+      name: categoryInputValue
+    });
+  }, [languageId, categoryInputValue, onCategoryAdd]);
 
   return {
-    isNewCategoryModalOpen,
-    setNewCategoryModalOpen,
     categoryInputValue,
     setCategoryInputValue,
-    inputHandleChange
+    onCategorySubmit
   };
 };
 
