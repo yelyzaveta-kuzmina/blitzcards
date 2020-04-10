@@ -1,10 +1,5 @@
 .button {
-  width: 40px;
-  height: 40px;
-
-  .lightning {
-    cursor: pointer;
-  }
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.2);

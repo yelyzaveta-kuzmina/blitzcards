@@ -13,7 +13,7 @@ const StartPageButton = ({ to, className }) => {
 
   return (
     <div className={classNames(styles.button, className)}>
-      <div className={styles.lightning} onClick={onClick}>
+      <div onClick={onClick}>
         <LightningIcon />
       </div>
     </div>
