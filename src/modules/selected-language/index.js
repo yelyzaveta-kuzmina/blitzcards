@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useRouteMatch } from 'react-router-dom';
 import { useCategories } from '../../state/categories';
 import { useLanguages } from '../../state/languages';
+import ToPreviousPageButton from '../../components/to-previous-page-button';
 import NoItemsExist from '../../components/items-dependent/no-items-exist';
 import ItemsExist from '../../components/items-dependent/items-exist';
 import AddNewCategoryModalWindow from '../add-new-category-modal-window';
@@ -29,6 +30,7 @@ const SelectedLanguage = () => {
 
   return (
     <>
+      <ToPreviousPageButton className={styles.toPreviousPageButton} to="/languages" />
       {isNewCategoryModalOpen && (
         <AddNewCategoryModalWindow
           onClose={() => setNewCategoryModalOpen(false)}
@@ -54,7 +56,7 @@ const SelectedLanguage = () => {
           onClick={() => setNewCategoryModalOpen(true)}>
           {filteredCategories.map((category, index) => (
             <NavLink
-              to={`/${sourceLanguage}/${targetLanguage}/${category.name}`}
+              to={`/${sourceLanguage}-${targetLanguage}/${category.name}`}
               key={index}
               className={styles.category}>
               {category.name}

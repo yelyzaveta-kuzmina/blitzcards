@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useLanguages } from '../../state/languages';
+import ToPreviousPageButton from '../../components/to-previous-page-button';
 import useNewLanguageModalWindow from '../add-new-language-modal-window/state';
 import AddNewLanguageModalWindow from '../add-new-language-modal-window';
 import NoItemsExist from '../../components/items-dependent/no-items-exist';
@@ -24,6 +25,7 @@ const Languages = () => {
         />
       ) : (
         <>
+          <ToPreviousPageButton className={styles.toPreviousPageButton} to="/" />
           <ItemsExist
             title={'Languages'}
             buttonText={'add new language'}

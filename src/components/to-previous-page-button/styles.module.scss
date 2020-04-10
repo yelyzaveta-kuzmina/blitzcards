@@ -1,0 +1,9 @@
+.button {
+  color: #ebe1e1;
+  cursor: pointer;
+
+  &:hover {
+    transition: color 0.2s;
+    color: #cfc6c6;
+  }
+}
