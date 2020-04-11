@@ -6,6 +6,7 @@ import useNewLanguageModalWindow from '../add-new-language-modal-window/state';
 import AddNewLanguageModalWindow from '../add-new-language-modal-window';
 import NoItemsExist from '../../components/items-dependent/no-items-exist';
 import ItemsExist from '../../components/items-dependent/items-exist';
+import DeleteButton from '../../components/delete-button';
 import styles from './styles.module.scss';
 
 const Languages = () => {
@@ -36,7 +37,8 @@ const Languages = () => {
                 key={index}
                 className={styles.existingLanguage}>
                 <div className={styles.languagesPairBox}>
-                  <span className={styles.targetLanguage}>{language.targetLanguage}</span>
+                  <DeleteButton className={styles.deleteButton} />
+                  <span>{language.targetLanguage}</span>
                   <span className={styles.sourceLanguage}>{language.sourceLanguage}</span>
                 </div>
               </NavLink>
