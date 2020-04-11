@@ -14,6 +14,7 @@ const Languages = () => {
 
   return (
     <>
+      <ToPreviousPageButton className={styles.toPreviousPageButton} to="/" />
       {isNewLanguageModalOpen && (
         <AddNewLanguageModalWindow onClose={() => setNewLanguageModalOpen(false)} />
       )}
@@ -25,7 +26,6 @@ const Languages = () => {
         />
       ) : (
         <>
-          <ToPreviousPageButton className={styles.toPreviousPageButton} to="/" />
           <ItemsExist
             title={'Languages'}
             buttonText={'add new language'}
