@@ -34,14 +34,15 @@
       position: absolute;
       visibility: hidden;
       opacity: 0;
-      font-size: 1em;
-      top: -5px;
-      right: -2px;
+      font-size: 0.7em;
+      top: 1px;
+      right: 1px;
       color: #fad163;
 
       &:hover {
-        transform: scale(1.2);
-        transition: transform 0.2s;
+        color: indianred;
+        opacity: 1;
+        transition: color 0.3s;
       }
     }
 
@@ -52,8 +53,8 @@
 
   &:hover .deleteButton {
     visibility: visible;
-    opacity: 1;
-    transition: opacity 0.9s linear;
+    opacity: 0.3;
+    transition: opacity 0.3s linear;
   }
 }
 
