@@ -1,10 +1,14 @@
 import React from 'react';
 import styles from './styles.module.scss';
 
-const AlertBox = ({ itemName, itemType }) => {
+const AlertBox = ({ text }) => {
   return (
     <div className={styles.alertBoxWrapper}>
-      {`Are you sure you want to permanently remove ${itemName} ${itemType} from your learning list?`}
+      <div className={styles.text}>{text}</div>
+      <div className={styles.buttons}>
+        <button className={styles.button}>Yes</button>
+        <button className={styles.button}>No</button>
+      </div>
     </div>
   );
 };

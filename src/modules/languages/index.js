@@ -57,7 +57,9 @@ const Languages = () => {
             ))}
 
             {languageToRemove && (
-              <AlertBox itemName={languageToRemove.targetLanguage} itemType={'language'} />
+              <AlertBox
+                text={`Are you sure you want to permanently remove ${languageToRemove.targetLanguage} language from your learning list?`}
+              />
             )}
           </ItemsExist>
         </>
