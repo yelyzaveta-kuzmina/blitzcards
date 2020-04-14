@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useLanguages } from '../../state/languages';
 import ToPreviousPageButton from '../../components/to-previous-page-button';
 import useNewLanguageModalWindow from '../add-new-language-modal-window/state';
 import AddNewLanguageModalWindow from '../add-new-language-modal-window';
+import AlertBox from '../alert-box';
 import NoItemsExist from '../../components/items-dependent/no-items-exist';
 import ItemsExist from '../../components/items-dependent/items-exist';
 import DeleteButton from '../../components/delete-button';
@@ -12,6 +13,9 @@ import styles from './styles.module.scss';
 const Languages = () => {
   const { languages } = useLanguages();
   const { isNewLanguageModalOpen, setNewLanguageModalOpen } = useNewLanguageModalWindow();
+  const [languageIdToRemove, setLanguageIdToRemove] = useState(null);
+
+  const languageToRemove = languages.find((language) => language.id === languageIdToRemove);
 
   return (
     <>
@@ -19,13 +23,15 @@ const Languages = () => {
       {isNewLanguageModalOpen && (
         <AddNewLanguageModalWindow onClose={() => setNewLanguageModalOpen(false)} />
       )}
-      {languages.length === 0 ? (
+      {languages.length === 0 && (
         <NoItemsExist
           title={'it is a good time to start learning some language'}
           buttonText={'add new language'}
           onClick={() => setNewLanguageModalOpen(true)}
         />
-      ) : (
+      )}
+
+      {languages.length > 0 && (
         <>
           <ItemsExist
             title={'Languages'}
@@ -37,12 +43,22 @@ const Languages = () => {
                 key={index}
                 className={styles.existingLanguage}>
                 <div className={styles.languagesPairBox}>
-                  <DeleteButton className={styles.deleteButton} />
+                  <DeleteButton
+                    className={styles.deleteButton}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      setLanguageIdToRemove(language.id);
+                    }}
+                  />
                   <span>{language.targetLanguage}</span>
                   <span className={styles.sourceLanguage}>{language.sourceLanguage}</span>
                 </div>
               </NavLink>
             ))}
+
+            {languageToRemove && (
+              <AlertBox itemName={languageToRemove.targetLanguage} itemType={'language'} />
+            )}
           </ItemsExist>
         </>
       )}

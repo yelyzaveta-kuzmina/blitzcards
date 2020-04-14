@@ -56,3 +56,17 @@
     transition: opacity 0.9s linear;
   }
 }
+
+.alertBoxWrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  left: 50%;
+  top: -50%;
+  transform: translateX(-50%);
+  width: 40em;
+  min-height: 10em;
+  padding: 1em;
+  background-color: plum;
+}
