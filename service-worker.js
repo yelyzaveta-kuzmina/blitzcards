@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/blitzcards/precache-manifest.24eab37be271e23bc4fba34eaa46a8fc.js"
+  "/blitzcards/precache-manifest.f94a9d96c9a07b7b8fc1f0e2d66efab2.js"
 );
 
 self.addEventListener('message', (event) => {
