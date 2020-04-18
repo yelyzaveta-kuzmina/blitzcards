@@ -17,13 +17,22 @@ const CategoriesProvider = ({ children }) => {
     setCategories((categories) => [...categories, newCategory]);
   }, []);
 
+  const onCategoryDelete = useCallback(
+    (categoryIdToRemove) => {
+      const newCategories = categories.filter((category) => category.id !== categoryIdToRemove);
+      setCategories(newCategories);
+    },
+    [categories]
+  );
+
   useEffect(() => {
     persistCategory(categories);
   }, [categories]);
 
   const value = {
     categories,
-    onCategoryAdd
+    onCategoryAdd,
+    onCategoryDelete
   };
 
   return <CategoriesContext.Provider value={value}>{children}</CategoriesContext.Provider>;
