@@ -1,0 +1,10 @@
+.closeButton {
+  font-size: 1.2em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    font-weight: 400;
+  }
+}

@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import { useWords } from '../words/state';
 import Input from '../../components/input';
 import Button from '../../components/button';
+import CloseButton from '../../components/close-button';
 import useNewWordModalWindow from './state';
 import styles from './styles.module.scss';
 
@@ -16,9 +17,7 @@ const AddNewWordModalWindow = ({ onClose, category }) => {
 
   return (
     <div className={styles.blockWrapper}>
-      <div className={styles.closeButton} onClick={onClose}>
-        &times;
-      </div>
+      <CloseButton className={styles.closeButton} onClick={onClose} />
       <div className={styles.inputsWrapper}>
         <Input
           placeholder={'What is the word you want to learn?'}

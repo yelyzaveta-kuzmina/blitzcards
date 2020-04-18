@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import Input from '../../components/input';
 import Button from '../../components/button';
+import CloseButton from '../../components/close-button';
 import useNewCategoryModalWindow from './state';
 import styles from './styles.module.scss';
 
@@ -25,9 +26,7 @@ const AddNewCategoryModalWindow = ({ onClose, languageId }) => {
 
   return (
     <div className={styles.blockWrapper}>
-      <div className={styles.closeButton} onClick={onClose}>
-        &times;
-      </div>
+      <CloseButton className={styles.closeButton} onClick={onClose} />
       <div className={styles.inputsWrapper}>
         <Input
           placeholder={'Name of the category'}
