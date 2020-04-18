@@ -5,8 +5,8 @@ import ToPreviousPageButton from '../../components/to-previous-page-button';
 import useNewLanguageModalWindow from '../add-new-language-modal-window/state';
 import AddNewLanguageModalWindow from '../add-new-language-modal-window';
 import AlertBox from '../../components/alert-box';
-import NoItemsExist from '../../components/items-dependent/no-items-exist';
-import ItemsExist from '../../components/items-dependent/items-exist';
+import NoItemsExist from '../../components/items-dependent-view/no-items-exist';
+import ItemsExist from '../../components/items-dependent-view/items-exist';
 import DeleteButton from '../../components/delete-button';
 import styles from './styles.module.scss';
 

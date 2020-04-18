@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import { useWords } from '../words/state';
 import AddNewWordModalWindow from '../add-new-word-modal-window';
-import NoItemsExist from '../../components/items-dependent/no-items-exist';
-import ItemsExist from '../../components/items-dependent/items-exist';
+import NoItemsExist from '../../components/items-dependent-view/no-items-exist';
+import ItemsExist from '../../components/items-dependent-view/items-exist';
 
 const SelectedCategory = () => {
   const { category } = useRouteMatch().params;
