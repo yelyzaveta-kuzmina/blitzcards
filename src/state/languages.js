@@ -12,13 +12,22 @@ const LanguagesProvider = ({ children }) => {
     setLanguages((languages) => [...languages, language]);
   }, []);
 
+  const onLanguageDelete = useCallback(
+    (languageToRemove) => {
+      const newLanguages = languages.filter((language) => language.id !== languageToRemove);
+      setLanguages(newLanguages);
+    },
+    [languages]
+  );
+
   useEffect(() => {
     persistLanguage(languages);
   }, [languages]);
 
   const value = {
     languages,
-    onLanguageAdd
+    onLanguageAdd,
+    onLanguageDelete
   };
 
   return <LanguagesContext.Provider value={value}>{children}</LanguagesContext.Provider>;

@@ -11,7 +11,7 @@ import DeleteButton from '../../components/delete-button';
 import styles from './styles.module.scss';
 
 const Languages = () => {
-  const { languages } = useLanguages();
+  const { languages, onLanguageDelete } = useLanguages();
   const { isNewLanguageModalOpen, setNewLanguageModalOpen } = useNewLanguageModalWindow();
   const [languageIdToRemove, setLanguageIdToRemove] = useState(null);
 
@@ -59,6 +59,9 @@ const Languages = () => {
             {languageToRemove && (
               <AlertBox
                 text={`Are you sure you want to permanently remove ${languageToRemove.targetLanguage} language from your learning list?`}
+                onApprove={() => onLanguageDelete(languageIdToRemove)}
+                onDecline={() => setLanguageIdToRemove(null)}
+                onModalClose={() => setLanguageIdToRemove(null)}
               />
             )}
           </ItemsExist>
