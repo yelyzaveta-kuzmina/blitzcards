@@ -47,7 +47,7 @@ const SelectedLanguage = () => {
         <NoItemsExist
           title={
             <>
-              Let's create a new category for <b>{sourceLanguage}</b>!
+              Let's create a new category for <b>{targetLanguage}</b>!
             </>
           }
           buttonText={'add new category'}
@@ -57,7 +57,7 @@ const SelectedLanguage = () => {
 
       {filteredCategories.length > 0 && (
         <ItemsExist
-          title={sourceLanguage}
+          title={targetLanguage}
           buttonText={'add new category'}
           onClick={() => setNewCategoryModalOpen(true)}>
           {filteredCategories.map((category, index) => (
