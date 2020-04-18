@@ -4,6 +4,7 @@ import { useWords } from '../words/state';
 import AddNewWordModalWindow from '../add-new-word-modal-window';
 import NoItemsExist from '../../components/items-dependent-view/no-items-exist';
 import ItemsExist from '../../components/items-dependent-view/items-exist';
+import DeleteButton from '../../components/delete-button';
 import styles from './styles.module.scss';
 
 const SelectedCategory = () => {
@@ -42,6 +43,7 @@ const SelectedCategory = () => {
                 <span className={styles.orderNumber}>{index + 1}.</span>
                 <span className={styles.wordToLearn}>{word.targetWord}</span>
                 <span className={styles.translation}>{word.sourceWord}</span>
+                <DeleteButton className={styles.deleteButton} />
               </div>
             ))}
           </div>

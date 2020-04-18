@@ -7,8 +7,9 @@
   box-sizing: border-box;
 
   .wordsPairRow {
+    position: relative;
     display: flex;
-    width: 50%;
+    width: 55%;
     padding: 0.5em;
     border-bottom: 1px solid lightgrey;
     cursor: pointer;
@@ -26,13 +27,34 @@
     }
 
     .wordToLearn {
-      width: 22em;
+      width: 20em;
       text-align: center;
     }
 
     .translation {
-      width: 22em;
+      width: 20em;
       text-align: center;
+    }
+
+    &:hover .deleteButton {
+      visibility: visible;
+      opacity: 0.3;
+      transition: opacity 0.3s linear;
+    }
+
+    .deleteButton {
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+      font-size: 1em;
+      right: 2em;
+      color: #fad163;
+
+      &:hover {
+        color: indianred;
+        opacity: 1;
+        transition: color 0.3s;
+      }
     }
   }
 }
