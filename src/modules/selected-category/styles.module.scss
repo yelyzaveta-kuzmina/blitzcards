@@ -1,0 +1,38 @@
+.wordsWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 1em;
+  box-sizing: border-box;
+
+  .wordsPairRow {
+    display: flex;
+    width: 50%;
+    padding: 0.5em;
+    border-bottom: 1px solid lightgrey;
+    cursor: pointer;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.03);
+    }
+
+    .orderNumber {
+      min-width: 1.5em;
+    }
+
+    .wordToLearn {
+      width: 22em;
+      text-align: center;
+    }
+
+    .translation {
+      width: 22em;
+      text-align: center;
+    }
+  }
+}

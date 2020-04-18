@@ -20,7 +20,7 @@ const AddNewWordModalWindow = ({ onClose, category }) => {
       <CloseButton className={styles.closeButton} onClick={onClose} />
       <div className={styles.inputsWrapper}>
         <Input
-          placeholder={'What is the word you want to learn?'}
+          placeholder={'Which word you would like to learn?'}
           name={'targetWord'}
           onChange={inputHandleChange}
         />
