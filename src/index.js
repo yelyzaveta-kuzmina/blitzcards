@@ -5,7 +5,7 @@ import AppStateProvider from './state';
 import ThemeProvider from './state/theming';
 import LanguagesProvider from './state/languages';
 import CategoriesProvider from './state/categories';
-import WordsProvider from './modules/words/state';
+import WordsProvider from './state/words';
 import App from './modules/app';
 import './index.scss';
 import 'normalize.css';

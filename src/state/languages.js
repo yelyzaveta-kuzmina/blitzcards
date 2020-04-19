@@ -13,8 +13,8 @@ const LanguagesProvider = ({ children }) => {
   }, []);
 
   const onLanguageDelete = useCallback(
-    (languageIdToRemove) => {
-      const newLanguages = languages.filter((language) => language.id !== languageIdToRemove);
+    (languageToRemove) => {
+      const newLanguages = languages.filter((language) => language.id !== languageToRemove);
       setLanguages(newLanguages);
     },
     [languages]

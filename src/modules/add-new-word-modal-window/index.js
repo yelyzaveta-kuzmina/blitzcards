@@ -1,13 +1,13 @@
 import React, { useCallback } from 'react';
-import { useWords } from '../words/state';
+import { useWords } from '../../state/words';
 import Input from '../../components/input';
 import Button from '../../components/button';
 import CloseButton from '../../components/close-button';
 import useNewWordModalWindow from './state';
 import styles from './styles.module.scss';
 
-const AddNewWordModalWindow = ({ onClose, category }) => {
-  const { wordInputValues, inputHandleChange } = useNewWordModalWindow(category);
+const AddNewWordModalWindow = ({ onClose, categoryId }) => {
+  const { wordInputValues, inputHandleChange } = useNewWordModalWindow({ categoryId });
   const { onWordAdd } = useWords();
 
   const onSubmit = useCallback(() => {
@@ -21,12 +21,12 @@ const AddNewWordModalWindow = ({ onClose, category }) => {
       <div className={styles.inputsWrapper}>
         <Input
           placeholder={'Which word you would like to learn?'}
-          name={'targetWord'}
+          name={'word'}
           onChange={inputHandleChange}
         />
         <Input
           placeholder={'What is the translation of the word?'}
-          name={'sourceWord'}
+          name={'translation'}
           onChange={inputHandleChange}
         />
       </div>

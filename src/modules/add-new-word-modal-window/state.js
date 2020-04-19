@@ -1,14 +1,15 @@
 import { useState } from 'react';
+import uuid from 'uuid/v4';
 
-export const useNewWordModalWindow = (category) => {
+const useNewWordModalWindow = ({ categoryId }) => {
   const [isNewWordModalOpen, setNewWordModalOpen] = useState(false);
-  const [wordInputValues, setWordInputValues] = useState({});
+  const [wordInputValues, setWordInputValues] = useState({ id: uuid() });
 
   const inputHandleChange = (event) => {
     const name = event.target.name;
     const newValue = event.target.value;
 
-    setWordInputValues({ ...wordInputValues, [name]: newValue, wordBelongsToCategory: category });
+    setWordInputValues({ ...wordInputValues, [name]: newValue, categoryId });
   };
 
   return {
