@@ -1,3 +1,10 @@
+.toPreviousPageButton {
+  position: absolute;
+  top: 13px;
+  left: 55px;
+  font-size: 28px;
+}
+
 .wordsWrapper {
   display: flex;
   flex-direction: column;
@@ -6,55 +13,70 @@
   padding: 1em;
   box-sizing: border-box;
 
-  .wordsPairRow {
-    position: relative;
+  .tableHeader {
     display: flex;
+    flex-direction: row;
     width: 55%;
-    padding: 0.5em;
-    border-bottom: 1px solid lightgrey;
-    cursor: pointer;
+    padding: 0 0.5em 1em;
+    font-variant: small-caps;
+    letter-spacing: 0.2em;
+    font-weight: 400;
 
-    &:last-of-type {
-      border-bottom: none;
-    }
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.03);
-    }
-
-    .orderNumber {
-      min-width: 1.5em;
-    }
-
-    .wordToLearn {
+    .titleCell {
       width: 20em;
       text-align: center;
     }
+  }
+  .tableBody {
+    overflow: scroll;
 
-    .translation {
-      width: 20em;
-      text-align: center;
-    }
+    .wordsPairRow {
+      position: relative;
+      display: flex;
+      width: 55%;
+      padding: 0.5em;
+      border-bottom: 1px solid lightgrey;
+      cursor: pointer;
 
-    &:hover .deleteButton {
-      visibility: visible;
-      opacity: 0.3;
-      transition: opacity 0.3s linear;
-    }
-
-    .deleteButton {
-      position: absolute;
-      visibility: hidden;
-      opacity: 0;
-      font-size: 1em;
-      right: 2em;
-      color: #fad163;
+      &:last-of-type {
+        border-bottom: none;
+      }
 
       &:hover {
-        color: indianred;
-        opacity: 1;
-        transition: color 0.3s;
+        background-color: rgba(0, 0, 0, 0.03);
+      }
+
+      .wordCell {
+        width: 20em;
+        text-align: center;
+        font-variant: small-caps;
+        letter-spacing: 0.1em;
+      }
+
+      &:hover .deleteButton {
+        visibility: visible;
+        opacity: 0.3;
+        transition: opacity 0.3s linear;
+      }
+
+      .deleteButton {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        font-size: 1em;
+        right: 2em;
+        color: #fad163;
+
+        &:hover {
+          color: indianred;
+          opacity: 1;
+          transition: color 0.3s;
+        }
       }
     }
   }
+}
+
+.spaceCell {
+  min-width: 1.5em;
 }

@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useRouteMatch } from 'react-router-dom';
-import { useCategories } from '../../state/categories';
 import { useLanguages } from '../../state/languages';
+import { useCategories } from '../../state/categories';
 import ToPreviousPageButton from '../../components/to-previous-page-button';
 import NoItemsExist from '../../components/items-dependent-view/no-items-exist';
 import ItemsExist from '../../components/items-dependent-view/items-exist';
 import AddNewCategoryModalWindow from '../add-new-category-modal-window';
 import AlertBox from '../../components/alert-box';
-import styles from './styles.module.scss';
 import DeleteButton from '../../components/delete-button';
+import styles from './styles.module.scss';
 
 const SelectedLanguage = () => {
   const { languages } = useLanguages();
