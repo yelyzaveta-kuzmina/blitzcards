@@ -5,78 +5,142 @@
   font-size: 28px;
 }
 
-.wordsWrapper {
+.wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100%;
   width: 100%;
-  padding: 1em;
-  box-sizing: border-box;
 
-  .tableHeader {
-    display: flex;
-    flex-direction: row;
-    width: 55%;
-    padding: 0 0.5em 1em;
-    font-variant: small-caps;
-    letter-spacing: 0.2em;
-    font-weight: 400;
+  .table {
+    flex-direction: column;
+    flex: 1;
 
-    .titleCell {
-      width: 20em;
-      text-align: center;
+    .tableHeader {
+      display: flex;
+      flex-direction: row;
+      width: 55%;
+      padding: 0 0.5em 1em;
+      font-variant: small-caps;
+      letter-spacing: 0.2em;
+      font-weight: 400;
+
+      .titleCell {
+        width: 20em;
+        text-align: center;
+      }
+    }
+    .tableBody {
+      overflow: scroll;
+
+      .wordsPairRow {
+        position: relative;
+        display: flex;
+        width: 70%;
+        padding: 0.5em;
+        border-bottom: 1px solid lightgrey;
+        cursor: pointer;
+
+        &:last-of-type {
+          border-bottom: none;
+        }
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.03);
+        }
+
+        .wordCell {
+          width: 20em;
+          text-align: center;
+          font-variant: small-caps;
+          letter-spacing: 0.1em;
+        }
+
+        &:hover .deleteButton {
+          visibility: visible;
+          opacity: 0.3;
+          transition: opacity 0.3s linear;
+        }
+
+        .deleteButton {
+          position: absolute;
+          visibility: hidden;
+          opacity: 0;
+          font-size: 1em;
+          right: 2em;
+          color: #fad163;
+
+          &:hover {
+            color: indianred;
+            opacity: 1;
+            transition: color 0.3s;
+          }
+        }
+      }
     }
   }
-  .tableBody {
-    overflow: scroll;
 
-    .wordsPairRow {
-      position: relative;
-      display: flex;
-      width: 55%;
-      padding: 0.5em;
-      border-bottom: 1px solid lightgrey;
+  .startGameButtonWrapper {
+    position: relative;
+
+    .button {
+      width: 13em;
+      height: 3em;
+      padding: 0.4em;
+      font-family: inherit;
+      font-size: 1em;
+      font-variant: small-caps;
+      letter-spacing: 0.2em;
+      color: var(--text-color);
+      background-color: transparent;
+      border: none;
+      outline: none;
       cursor: pointer;
 
-      &:last-of-type {
-        border-bottom: none;
+      background: linear-gradient(46deg, #fad163, #ffe08d, #fbeecb);
+      background-size: 600% 600%;
+      animation: gradientAnimation 4s ease infinite;
+
+      .text {
+        font-weight: 300;
       }
 
       &:hover {
-        background-color: rgba(0, 0, 0, 0.03);
+        color: --text-color;
+        border: 1px solid var(--text-color-light);
+        background-color: #fad163;
+        animation: none;
       }
 
-      .wordCell {
-        width: 20em;
-        text-align: center;
-        font-variant: small-caps;
-        letter-spacing: 0.1em;
+      &:hover .text {
+        font-weight: 400;
       }
 
-      &:hover .deleteButton {
-        visibility: visible;
-        opacity: 0.3;
-        transition: opacity 0.3s linear;
+      &:hover ~ .lightningImage {
+        opacity: 1;
       }
+    }
 
-      .deleteButton {
-        position: absolute;
-        visibility: hidden;
-        opacity: 0;
-        font-size: 1em;
-        right: 2em;
-        color: #fad163;
-
-        &:hover {
-          color: indianred;
-          opacity: 1;
-          transition: color 0.3s;
-        }
-      }
+    .lightningImage {
+      position: absolute;
+      left: -60px;
+      height: 3em;
+      opacity: 0;
     }
   }
 }
 
 .spaceCell {
   min-width: 1.5em;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 96%;
+  }
+  50% {
+    background-position: 100% 5%;
+  }
+  100% {
+    background-position: 0% 96%;
+  }
 }

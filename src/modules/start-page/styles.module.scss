@@ -2,4 +2,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .button {
+    width: 14em;
+    height: 3em;
+    font-family: inherit;
+    font-size: 0.9em;
+    font-variant: small-caps;
+    letter-spacing: 0.2em;
+    border: 1px solid var(--text-color-light);
+    color: var(--text-color);
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+
+    .text {
+      font-weight: 300;
+    }
+
+    &:hover {
+      transition: border-color linear 0.4s;
+      border-color: var(--text-color);
+      color: --text-color;
+    }
+
+    &:hover .text {
+      font-weight: 400;
+    }
+  }
 }

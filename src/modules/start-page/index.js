@@ -10,7 +10,12 @@ const StartPage = () => {
       <SettingsButton to="/settings" />
       <div className={styles.content}>
         <MottoBox title={'discover, store, memorize!'} subtitle={'Learn new words every day'} />
-        <LinkButton text={'start'} to="./languages" />
+        <LinkButton
+          to="./languages"
+          text={'start'}
+          classNameButton={styles.button}
+          classNameText={styles.text}
+        />
       </div>
     </>
   );

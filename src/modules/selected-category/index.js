@@ -7,8 +7,10 @@ import ToPreviousPageButton from '../../components/to-previous-page-button';
 import AddNewWordModalWindow from '../add-new-word-modal-window';
 import NoItemsExist from '../../components/items-dependent-view/no-items-exist';
 import ItemsExist from '../../components/items-dependent-view/items-exist';
+import LinkButton from '../../components/link-button';
 import AlertBox from '../../components/alert-box';
 import DeleteButton from '../../components/delete-button';
+import LightningImage from '../../assets/images/lightning.png';
 import styles from './styles.module.scss';
 
 const SelectedCategory = () => {
@@ -60,45 +62,58 @@ const SelectedCategory = () => {
       )}
 
       {filteredWords.length > 0 && (
-        <ItemsExist
-          title={categoryName}
-          buttonText={'add new word'}
-          onClick={() => setNewWordModalOpen(true)}>
-          <div className={styles.wordsWrapper}>
-            <div className={styles.tableHeader}>
-              <span className={styles.spaceCell} />
-              <span className={styles.titleCell}>word</span>
-              <span className={styles.spaceCell} />
-              <span className={styles.titleCell}>translation</span>
-            </div>
-            <div className={styles.tableBody}>
-              {filteredWords.map((word, index) => (
-                <div key={index} className={styles.wordsPairRow}>
-                  <span className={styles.spaceCell}>{index + 1}.</span>
-                  <span className={styles.wordCell}>{word.word}</span>
+        <>
+          <ItemsExist
+            title={categoryName}
+            buttonText={'add new word'}
+            onClick={() => setNewWordModalOpen(true)}>
+            <div className={styles.wrapper}>
+              <div className={styles.table}>
+                <div className={styles.tableHeader}>
                   <span className={styles.spaceCell} />
-                  <span className={styles.wordCell}>{word.translation}</span>
-                  <DeleteButton
-                    className={styles.deleteButton}
-                    onClick={(event) => {
-                      event.preventDefault();
-                      setWordIdToRemove(word.id);
-                    }}
-                  />
+                  <span className={styles.titleCell}>word</span>
+                  <span className={styles.spaceCell} />
+                  <span className={styles.titleCell}>translation</span>
                 </div>
-              ))}
+                <div className={styles.tableBody}>
+                  {filteredWords.map((word, index) => (
+                    <div key={index} className={styles.wordsPairRow}>
+                      <span className={styles.spaceCell}>{index + 1}.</span>
+                      <span className={styles.wordCell}>{word.word}</span>
+                      <span className={styles.spaceCell} />
+                      <span className={styles.wordCell}>{word.translation}</span>
+                      <DeleteButton
+                        className={styles.deleteButton}
+                        onClick={(event) => {
+                          event.preventDefault();
+                          setWordIdToRemove(word.id);
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className={styles.startGameButtonWrapper}>
+                <LinkButton
+                  to=""
+                  text={'start game'}
+                  classNameButton={styles.button}
+                  classNameText={styles.text}
+                />
+                <img src={LightningImage} alt="Lightning" className={styles.lightningImage} />
+              </div>
             </div>
-          </div>
 
-          {wordToRemove && (
-            <AlertBox
-              text={`Are you sure you want to permanently remove ${wordToRemove.word} word from the list?`}
-              onApprove={() => onWordDelete(wordIdToRemove)}
-              onDecline={() => setWordIdToRemove(null)}
-              onModalClose={() => setWordIdToRemove(null)}
-            />
-          )}
-        </ItemsExist>
+            {wordToRemove && (
+              <AlertBox
+                text={`Are you sure you want to permanently remove ${wordToRemove.word} word from the list?`}
+                onApprove={() => onWordDelete(wordIdToRemove)}
+                onDecline={() => setWordIdToRemove(null)}
+                onModalClose={() => setWordIdToRemove(null)}
+              />
+            )}
+          </ItemsExist>
+        </>
       )}
     </>
   );

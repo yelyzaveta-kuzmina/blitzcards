@@ -1,8 +1,7 @@
 import React, { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
-import styles from './styles.module.scss';
 
-const LinkButton = ({ to, text }) => {
+const LinkButton = ({ to, text, classNameButton, classNameText }) => {
   const history = useHistory();
 
   const onClick = useCallback(() => {
@@ -10,8 +9,8 @@ const LinkButton = ({ to, text }) => {
   }, [to, history]);
 
   return (
-    <button className={styles.button} onClick={onClick}>
-      <span className={styles.text}>{text}</span>
+    <button className={classNameButton} onClick={onClick}>
+      <span className={classNameText}>{text}</span>
     </button>
   );
 };
