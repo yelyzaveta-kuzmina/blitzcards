@@ -6,6 +6,7 @@ const Input = ({ placeholder, name, maxlength, onChange }) => {
     <label htmlFor={name} className={styles.inputWrapper}>
       <input
         className={styles.input}
+        autocomplete="off"
         placeholder={placeholder}
         name={name}
         maxlength={maxlength}

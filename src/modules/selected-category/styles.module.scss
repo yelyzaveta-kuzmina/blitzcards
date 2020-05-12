@@ -81,6 +81,8 @@
 
   .startGameButtonWrapper {
     position: relative;
+    display: flex;
+    flex-direction: column;
 
     .button {
       width: 13em;
@@ -118,6 +120,25 @@
       &:hover ~ .lightningImage {
         opacity: 1;
         animation: bounce-in-right 1.2s 0.3s both;
+      }
+    }
+
+    .settingsButton {
+      width: 7em;
+      align-self: center;
+      margin-top: 0.5em;
+      font-family: inherit;
+      font-size: 0.7em;
+      font-variant: small-caps;
+      letter-spacing: 0.1em;
+      color: var(--text-color);
+      border: none;
+      outline: none;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: transform 0.2s;
       }
     }
 

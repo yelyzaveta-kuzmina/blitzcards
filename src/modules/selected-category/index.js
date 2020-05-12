@@ -100,6 +100,7 @@ const SelectedCategory = () => {
                   classNameButton={styles.button}
                   classNameText={styles.text}
                 />
+                <LinkButton to="" text={'settings'} classNameButton={styles.settingsButton} />
                 <img src={LightningImage} alt="Lightning" className={styles.lightningImage} />
               </div>
             </div>
