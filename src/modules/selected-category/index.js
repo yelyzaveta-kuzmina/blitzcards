@@ -10,7 +10,6 @@ import ItemsExist from '../../components/items-dependent-view/items-exist';
 import LinkButton from '../../components/link-button';
 import AlertBox from '../../components/alert-box';
 import DeleteButton from '../../components/delete-button';
-import LightningImage from '../../assets/images/lightning.png';
 import styles from './styles.module.scss';
 
 const SelectedCategory = () => {
@@ -105,7 +104,6 @@ const SelectedCategory = () => {
                   text={'settings'}
                   classNameButton={styles.settingsButton}
                 />
-                <img src={LightningImage} alt="Lightning" className={styles.lightningImage} />
               </div>
             </div>
 
