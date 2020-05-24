@@ -1,0 +1,22 @@
+.toPreviousPageButton {
+  position: absolute;
+  top: 13px;
+  left: 55px;
+  font-size: 28px;
+}
+
+.settingTitle {
+  margin-bottom: 2em;
+}
+
+.settingDetails {
+  display: flex;
+  align-items: center;
+  height: 3em;
+}
+
+.arrowsImage {
+  height: 2em;
+  margin: 0 1em;
+  cursor: pointer;
+}
