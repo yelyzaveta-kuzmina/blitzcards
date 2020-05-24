@@ -1,15 +1,15 @@
 import React from 'react';
 import styles from './styles.module.scss';
 
-const Input = ({ placeholder, name, maxlength, onChange }) => {
+const Input = ({ placeholder, name, maxLength, onChange }) => {
   return (
     <label htmlFor={name} className={styles.inputWrapper}>
       <input
         className={styles.input}
-        autocomplete="off"
+        autoComplete="off"
         placeholder={placeholder}
         name={name}
-        maxlength={maxlength}
+        maxLength={maxLength}
         onChange={onChange}
       />
     </label>

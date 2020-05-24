@@ -9,8 +9,6 @@ const WordsContext = createContext({});
 const WordsProvider = ({ children }) => {
   const [words, setWords] = useState(initialWords);
 
-  console.log(words);
-
   const onWordAdd = useCallback((word) => {
     const newWord = {
       id: uuid(),

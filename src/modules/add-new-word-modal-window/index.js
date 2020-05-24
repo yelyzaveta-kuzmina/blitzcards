@@ -22,13 +22,13 @@ const AddNewWordModalWindow = ({ onClose, categoryId }) => {
         <Input
           placeholder={'Which word you would like to learn?'}
           name={'word'}
-          maxlength={30}
+          maxLength={30}
           onChange={inputHandleChange}
         />
         <Input
           placeholder={'What is the translation of the word?'}
           name={'translation'}
-          maxlength={30}
+          maxLength={30}
           onChange={inputHandleChange}
         />
       </div>
