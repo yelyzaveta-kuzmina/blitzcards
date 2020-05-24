@@ -1,0 +1,2 @@
+(this.webpackJsonpblitzcards=this.webpackJsonpblitzcards||[]).push([[13],{368:function(e,t,s){"use strict";s.r(t);var n=s(0),a=s.n(n);t.default=function(){return a.a.createElement("div",null,"Here is supposed to be the game")}}}]);
+//# sourceMappingURL=13.8e2c3f5d.chunk.js.map

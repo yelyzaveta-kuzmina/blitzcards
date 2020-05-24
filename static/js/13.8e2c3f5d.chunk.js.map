@@ -1,0 +1,1 @@
+{"version":3,"sources":["modules/game/index.js"],"names":["NewGame"],"mappings":"2GAAA,2BAOeA,UAJC,WACd,OAAO","file":"static/js/13.8e2c3f5d.chunk.js","sourcesContent":["import React from 'react';\n// import styles from './styles.module.scss';\n\nconst NewGame = () => {\n  return <div>Here is supposed to be the game</div>;\n};\n\nexport default NewGame;\n"],"sourceRoot":""}
