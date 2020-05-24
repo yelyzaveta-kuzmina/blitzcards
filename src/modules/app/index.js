@@ -11,6 +11,7 @@ const SelectedLanguageAsync = lazy(() => import('../selected-language'));
 const SelectedCategoryAsync = lazy(() => import('../selected-category'));
 const SettingsWindowAsync = lazy(() => import('../settings-window'));
 const GameSettingsWindowAsync = lazy(() => import('../game-settings-window'));
+const NewGame = lazy(() => import('../game'));
 
 const Application = () => {
   return (
@@ -24,6 +25,7 @@ const Application = () => {
             path="/:sourceLanguage-:targetLanguage/:category/game-settings"
             component={GameSettingsWindowAsync}
           />
+          <Route path="/:sourceLanguage-:targetLanguage/:category/game" component={NewGame} />
           <Route
             path="/:sourceLanguage-:targetLanguage/:category"
             component={SelectedCategoryAsync}

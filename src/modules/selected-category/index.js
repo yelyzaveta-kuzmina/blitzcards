@@ -94,7 +94,7 @@ const SelectedCategory = () => {
               </div>
               <div className={styles.startGameButtonWrapper}>
                 <LinkButton
-                  to=""
+                  to={`/${sourceLanguage}-${targetLanguage}/${categoryName}/game`}
                   text={'start game'}
                   classNameButton={styles.button}
                   classNameText={styles.text}
