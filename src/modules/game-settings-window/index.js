@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useAppState } from '../../state';
 import { useRouteMatch } from 'react-router-dom';
 import ToPreviousPageButton from '../../components/to-previous-page-button';
 import ArrowsImage from '../../assets/images/arrows.png';
 import styles from './styles.module.scss';
 
 const GameSettingsWindow = () => {
+  const { translationDirection, setTranslationDirection } = useAppState();
   const { sourceLanguage, targetLanguage, category: categoryName } = useRouteMatch().params;
-  const [translationDirection, setTranslationDirection] = useState(`${sourceLanguage}`);
 
   const onChangeTranslationDirection = () => {
-    if (translationDirection === sourceLanguage) {
-      setTranslationDirection(targetLanguage);
+    if (translationDirection === 'sourceLanguage') {
+      setTranslationDirection('targetLanguage');
     } else {
-      setTranslationDirection(sourceLanguage);
+      setTranslationDirection('sourceLanguage');
     }
   };
 
@@ -24,7 +25,7 @@ const GameSettingsWindow = () => {
       />
       <div className={styles.settingTitle}>Choose the direction of translation:</div>
       <div className={styles.settingDetails}>
-        {translationDirection === sourceLanguage ? (
+        {translationDirection === 'sourceLanguage' ? (
           <span className={styles.language}>{sourceLanguage}</span>
         ) : (
           <span className={styles.language}>{targetLanguage}</span>
@@ -35,7 +36,7 @@ const GameSettingsWindow = () => {
           className={styles.arrowsImage}
           onClick={() => onChangeTranslationDirection()}
         />
-        {translationDirection === sourceLanguage ? (
+        {translationDirection === 'sourceLanguage' ? (
           <span className={styles.language}>{targetLanguage}</span>
         ) : (
           <span className={styles.language}>{sourceLanguage}</span>
