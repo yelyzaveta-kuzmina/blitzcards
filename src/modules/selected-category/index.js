@@ -13,8 +13,8 @@ import DeleteButton from '../../components/delete-button';
 import styles from './styles.module.scss';
 
 const SelectedCategory = () => {
-  const { categories } = useCategories();
   const { languages } = useLanguages();
+  const { categories } = useCategories();
   const { words, onWordDelete } = useWords();
   const { sourceLanguage, targetLanguage, category: categoryName } = useRouteMatch().params;
   const [isNewWordModalOpen, setNewWordModalOpen] = useState(false);

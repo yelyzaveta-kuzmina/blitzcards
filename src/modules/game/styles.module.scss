@@ -1,0 +1,61 @@
+.gameWindowWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  .timerWrapper {
+    text-align: center;
+    padding: 0 0 1em;
+  }
+
+  .playArea {
+    flex: 1;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+
+    .wordToTranslate {
+      font-size: 1.5em;
+      font-variant: small-caps;
+      letter-spacing: 0.2em;
+      color: var(--text-color);
+    }
+
+    .wordTranslationInputWrapper {
+      display: flex;
+      background-color: transparent;
+      border-color: transparent;
+      outline: none;
+      font-weight: inherit;
+      font-variant: small-caps;
+      color: var(--text-color);
+    }
+  }
+
+  .next {
+    align-self: center;
+    font-size: 3em;
+    color: #ebe1e1;
+    cursor: pointer;
+
+    &:hover {
+      transition: color 0.2s;
+      color: #cfc6c6;
+    }
+  }
+}
+
+input {
+  text-align: center;
+  font-size: 1.5em;
+  height: 3em;
+  outline: none;
+}
+
+:placeholder-shown {
+  letter-spacing: 0.2em;
+}
