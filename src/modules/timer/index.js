@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { formatTime } from '../../utils/formatting';
+import styles from './styles.module.scss';
 
 const Timer = () => {
   const [seconds, setSeconds] = useState(0);
@@ -11,9 +13,9 @@ const Timer = () => {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  });
 
-  return <div>{seconds}s</div>;
+  return <div className={styles.timer}>{formatTime(seconds)}</div>;
 };
 
 export default Timer;
