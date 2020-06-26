@@ -44,5 +44,5 @@ export const useGame = () => {
     },
     [word, next]
   );
-  return { word, isGameFinished, next, check, points };
+  return { filteredWords, currentWordIndex, word, check, next, points, isGameFinished };
 };

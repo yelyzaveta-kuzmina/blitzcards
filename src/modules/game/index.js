@@ -8,40 +8,30 @@ import TranslationInput from '../../components/translation-input';
 
 const NewGame = () => {
   const [inputValue, setInputValue] = useState('');
-  const { word, isGameFinished, check, points } = useGame();
+  const { filteredWords, currentWordIndex, word, isGameFinished, check, points } = useGame();
 
   if (isGameFinished) {
     return 'Game finished!';
   }
 
-  const mask = word.translation.replace(/\w/g, '*');
+  const handleNextStep = (inputValue) => {
+    check(inputValue);
+    setInputValue('');
+  };
 
   return (
     <div className={styles.gameWindowWrapper}>
       <div className={styles.timerWrapper}>
         <Timer />
-        {points}
+        {points} - {filteredWords.length} - {currentWordIndex + 1}
       </div>
       <div className={styles.playArea}>
         <PlayingCard className={styles.wordToTranslate}>{word.word}</PlayingCard>
         <PlayingCard>
-          {/* <MaskedInput maskWord value={inputValue} onChange={(event) => setInputValue(event.target.value)} /> */}
-          {/* <input
-            autoFocus
-            className={styles.wordTranslationInputWrapper}
-            value={inputValue}
-            onChange={(event) => setInputValue(event.target.value)}
-          /> */}
-          <TranslationInput wordMask={mask} onChange={setInputValue} />
+          <TranslationInput word={word} onChange={setInputValue} />
         </PlayingCard>
       </div>
-      <ToNextStepButton
-        className={styles.next}
-        onClick={() => {
-          check(inputValue);
-          setInputValue('');
-        }}
-      />
+      <ToNextStepButton className={styles.next} onClick={() => handleNextStep(inputValue)} />
     </div>
   );
 };
