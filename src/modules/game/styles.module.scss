@@ -6,8 +6,24 @@
   width: 100%;
 
   .timerWrapper {
+    position: absolute;
+    top: 6em;
+    left: -2em;
+    display: flex;
+    justify-content: center;
     text-align: center;
+    animation: roll-in-left 0.6s ease-out both;
+  }
+
+  .resultsWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0.3em;
+    font-size: 1.6em;
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+    color: var(--text-color);
   }
 
   .playArea {
@@ -38,6 +54,13 @@
       color: #cfc6c6;
     }
   }
+
+  .progress {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.5em;
+    color: var(--text-color);
+  }
 }
 
 input {
@@ -49,4 +72,17 @@ input {
 
 :placeholder-shown {
   letter-spacing: 0.2em;
+}
+
+@keyframes roll-in-left {
+  0% {
+    -webkit-transform: translateX(-800px) rotate(-540deg);
+    transform: translateX(-800px) rotate(-540deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
 }

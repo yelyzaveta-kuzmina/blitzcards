@@ -23,8 +23,8 @@ const NewGame = () => {
     <div className={styles.gameWindowWrapper}>
       <div className={styles.timerWrapper}>
         <Timer />
-        {points} - {filteredWords.length} - {currentWordIndex + 1}
       </div>
+      <div className={styles.resultsWrapper}>points: {points}</div>
       <div className={styles.playArea}>
         <PlayingCard className={styles.wordToTranslate}>{word.word}</PlayingCard>
         <PlayingCard>
@@ -32,6 +32,9 @@ const NewGame = () => {
         </PlayingCard>
       </div>
       <ToNextStepButton className={styles.next} onClick={() => handleNextStep(inputValue)} />
+      <div className={styles.progress}>
+        {currentWordIndex + 1}/{filteredWords.length}
+      </div>
     </div>
   );
 };
