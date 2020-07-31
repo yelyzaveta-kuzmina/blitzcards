@@ -21,7 +21,7 @@
     align-items: center;
     padding: 0.3em;
     font-size: 1.6em;
-    font-variant: small-caps;
+    font-variant: inherit;
     letter-spacing: 0.1em;
     color: var(--text-color);
   }
@@ -36,7 +36,7 @@
 
     .wordToTranslate {
       font-size: 1.5em;
-      font-variant: small-caps;
+      font-variant: inherit;
       letter-spacing: 0.2em;
       color: var(--text-color);
       cursor: default;

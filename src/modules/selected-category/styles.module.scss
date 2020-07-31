@@ -20,7 +20,7 @@
       flex-direction: row;
       width: 70%;
       padding: 0 0.5em 1em;
-      font-variant: small-caps;
+      font-variant: inherit;
       letter-spacing: 0.2em;
       font-weight: 400;
 
@@ -51,7 +51,7 @@
         .wordCell {
           width: 20em;
           text-align: center;
-          font-variant: small-caps;
+          font-variant: inherit;
           letter-spacing: 0.1em;
         }
 
@@ -90,7 +90,7 @@
       padding: 0.4em;
       font-family: inherit;
       font-size: 1em;
-      font-variant: small-caps;
+      font-variant: inherit;
       letter-spacing: 0.2em;
       color: var(--text-color);
       background-color: transparent;
@@ -124,7 +124,7 @@
       margin-top: 0.5em;
       font-family: inherit;
       font-size: 0.7em;
-      font-variant: small-caps;
+      font-variant: inherit;
       letter-spacing: 0.1em;
       color: var(--text-color);
       border: none;

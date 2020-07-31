@@ -32,8 +32,8 @@
     height: 1.5em;
     margin: 0 2px;
     text-align: center;
-    color: black;
-    font-weight: 400;
+    font-weight: inherit;
+    color: var(--text-color);
   }
 
   input {

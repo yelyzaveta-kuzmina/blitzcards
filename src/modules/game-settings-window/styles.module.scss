@@ -1,27 +1,108 @@
-.toPreviousPageButton {
-  position: absolute;
-  top: 13px;
-  left: 55px;
-  font-size: 28px;
-}
-
-.settingTitle {
-  margin-bottom: 2em;
-}
-
-.settingDetails {
+.settingsWrapper {
   display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
   align-items: center;
-  height: 3em;
 
-  .language {
-    width: 6em;
+  .toPreviousPageButton {
+    position: absolute;
+    top: 13px;
+    left: 55px;
+    font-size: 28px;
+  }
+
+  .confirmationToast {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    top: -1em;
+    height: 2em;
+    padding: 1em;
+    background: linear-gradient(46deg, #fad163, #ffe08d, #fbeecb);
+    background-size: 600% 600%;
+    animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both,
+      gradientAnimation 1s ease infinite;
+    font-variant: inherit;
+    letter-spacing: 0.1em;
+    transition: border-color linear 0.4s;
+    border: 0.5px solid var(--text-color);
+    color: --text-color;
+  }
+
+  .settingsDetails {
     text-align: center;
+    padding-bottom: 3em;
+
+    .settingTitle {
+      font-size: 1.5em;
+      margin-bottom: 2em;
+    }
+
+    .languagesDirection {
+      display: flex;
+      align-items: center;
+      height: 3em;
+
+      .language {
+        width: 6em;
+        text-align: center;
+      }
+
+      .arrowsImageButton {
+        border: none;
+        outline: none;
+        padding: 0;
+
+        .arrowsImage {
+          height: 2em;
+          margin: 0 1em;
+          cursor: pointer;
+        }
+
+        &:hover {
+          transform: scale(1.2);
+          transition: transform 0.2s;
+        }
+      }
+    }
+  }
+
+  .button {
+    width: 5em;
+    height: 2em;
+    padding: 0 0 0px 4px;
+    font-size: 1em;
   }
 }
 
-.arrowsImage {
-  height: 2em;
-  margin: 0 1em;
-  cursor: pointer;
+.slide-in-top {
+  -webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 96%;
+  }
+  50% {
+    background-position: 100% 5%;
+  }
+  100% {
+    background-position: 0% 96%;
+  }
 }
