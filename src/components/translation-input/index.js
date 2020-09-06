@@ -102,7 +102,6 @@ const TranslationInput = ({ word, onChange }) => {
               }}
               onKeyPress={(event) => {
                 const char = String.fromCharCode(event.charCode);
-                console.log(char, index);
                 updateValueAtIndex(char, index);
                 onFocusNextInput(event.target);
               }}

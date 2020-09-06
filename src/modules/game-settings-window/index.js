@@ -45,8 +45,6 @@ const GameSettingsWindow = () => {
     }
   }, [isConfirmationVisible]);
 
-  console.log(isTranslationDirectionChangeAllowed);
-
   const [newSourceLanguage, newTargetLanguage] =
     languageToTranslateFrom === 'sourceLanguage'
       ? [sourceLanguage, targetLanguage]

@@ -37,9 +37,6 @@ export const useGame = () => {
 
   const check = useCallback(
     (userWord) => {
-      console.log(userWord);
-      const ifTrue = userWord === word.translation;
-      console.log(ifTrue);
       if (userWord === word.translation) {
         setPoints((points) => points + 1);
       }
