@@ -22,7 +22,7 @@ const NewGame = () => {
 
   return (
     <div className={styles.gameWindowWrapper}>
-      <Timer value={timer} />
+      <Timer time={timer} />
       <div className={styles.resultsWrapper}>points: {points}</div>
       <div className={styles.playArea}>
         <PlayingCard className={styles.wordToTranslate}>{word.word}</PlayingCard>

@@ -18,7 +18,6 @@
     position: absolute;
     align-items: center;
     top: -1em;
-    height: 2em;
     padding: 1em;
     background: linear-gradient(46deg, #fad163, #ffe08d, #fbeecb);
     background-size: 600% 600%;
@@ -26,8 +25,7 @@
       gradientAnimation 1s ease infinite;
     font-variant: inherit;
     letter-spacing: 0.1em;
-    transition: border-color linear 0.4s;
-    border: 0.5px solid var(--text-color);
+    border-radius: 50px;
     color: --text-color;
   }
 

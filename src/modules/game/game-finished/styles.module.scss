@@ -1,3 +1,39 @@
+.toPreviousPageButton {
+  position: absolute;
+  top: 13px;
+  left: 55px;
+  font-size: 28px;
+}
+
 .wrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    display: flex;
+    justify-content: center;
+    color: #fad163;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  .results {
+    margin-bottom: 1.5em;
+  }
+
+  .retryIcon {
+    align-self: center;
+    width: 7.5em;
+    cursor: pointer;
+
+    transition-duration: 2s;
+    transition-property: transform;
+
+    &:hover {
+      transform: scale(1.2) rotate(360deg);
+      transition: transform 0.4s;
+    }
+  }
 }

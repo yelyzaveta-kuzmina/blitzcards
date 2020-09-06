@@ -58,7 +58,7 @@ const GameSettingsWindow = () => {
       />
       {isConfirmationVisible && (
         <div className={styles.confirmationToast}>
-          {`translation direction set as followed: translate from -  ${newSourceLanguage} to ${newTargetLanguage} `}
+          {`Translation set: from -  ${newSourceLanguage} to ${newTargetLanguage} `}
         </div>
       )}
       <div className={styles.settingsDetails}>

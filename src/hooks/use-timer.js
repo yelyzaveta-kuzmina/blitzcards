@@ -1,5 +1,6 @@
 import { useRef, useCallback, useEffect, useState } from 'react';
 import { clamp } from 'lodash-es';
+import { formatTime } from '../utils/formatting';
 
 const useTimer = ({
   interval = 1000,
@@ -28,7 +29,7 @@ const useTimer = ({
     };
   }, []);
 
-  return { value, startTimer, stopTimer };
+  return { value: formatTime(value), startTimer, stopTimer };
 };
 
 export default useTimer;
