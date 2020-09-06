@@ -9,10 +9,10 @@ import styles from './styles.module.scss';
 
 const NewGame = () => {
   const [inputValue, setInputValue] = useState('');
-  const { filteredWords, currentWordIndex, word, isGameFinished, check, points } = useGame();
+  const { filteredWords, currentWordIndex, word, isGameFinished, check, points, timer } = useGame();
 
   if (isGameFinished) {
-    return <GameFinished points={points} />;
+    return <GameFinished points={points} time={timer} />;
   }
 
   const handleNextStep = (inputValue) => {
@@ -22,9 +22,7 @@ const NewGame = () => {
 
   return (
     <div className={styles.gameWindowWrapper}>
-      <div className={styles.timerWrapper}>
-        <Timer />
-      </div>
+      <Timer value={timer} />
       <div className={styles.resultsWrapper}>points: {points}</div>
       <div className={styles.playArea}>
         <PlayingCard className={styles.wordToTranslate}>{word.word}</PlayingCard>

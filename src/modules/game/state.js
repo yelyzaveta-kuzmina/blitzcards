@@ -1,14 +1,16 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import { useLanguages } from '../../state/languages';
 import { useCategories } from '../../state/categories';
 import { useWords } from '../../state/words';
+import useTimer from '../../hooks/use-timer';
 
 export const useGame = () => {
   const { languages } = useLanguages();
   const { categories } = useCategories();
   const { words } = useWords();
   const { sourceLanguage, targetLanguage, category: categoryName } = useRouteMatch().params;
+  const { value: timer, startTimer, stopTimer } = useTimer();
 
   const selectedLanguage = languages.find((language) => {
     return language.sourceLanguage === sourceLanguage && language.targetLanguage === targetLanguage;
@@ -30,7 +32,8 @@ export const useGame = () => {
       return;
     }
     setIsGameFinished(true);
-  }, [currentWordIndex, filteredWords]);
+    stopTimer();
+  }, [currentWordIndex, filteredWords, stopTimer]);
 
   const check = useCallback(
     (userWord) => {
@@ -44,5 +47,23 @@ export const useGame = () => {
     },
     [word, next]
   );
-  return { filteredWords, currentWordIndex, word, check, next, points, isGameFinished };
+
+  const initGame = useCallback(() => {
+    startTimer();
+  }, [startTimer]);
+
+  useEffect(initGame, []);
+
+  return {
+    filteredWords,
+    currentWordIndex,
+    word,
+    check,
+    next,
+    points,
+    isGameFinished,
+    timer,
+    startTimer,
+    stopTimer
+  };
 };

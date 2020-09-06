@@ -2,11 +2,11 @@ import React from 'react';
 import Fireworks from './fireworks';
 import styles from './styles.module.scss';
 
-const GameFinished = ({ points }) => {
+const GameFinished = ({ points, time }) => {
   return (
     <div className={styles.wrapper}>
       <Fireworks />
-      {points}
+      Congratulations! You reached {points} points in {time}
     </div>
   );
 };
