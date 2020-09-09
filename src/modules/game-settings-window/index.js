@@ -1,54 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { useAppState } from '../../state';
+import React, { useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import ToPreviousPageButton from '../../components/to-previous-page-button';
-import ArrowsImage from '../../assets/images/arrows.png';
-import Button from '../../components/button';
+import SideMenu from './side-menu';
+import TranslationDirectionSetting from './translation-direction';
 import styles from './styles.module.scss';
 
 const GameSettingsWindow = () => {
-  const { submittedTranslationDirection, setTranslationDirection } = useAppState();
   const { sourceLanguage, targetLanguage, category: categoryName } = useRouteMatch().params;
-  const [languageToTranslateFrom, setLanguageToTranslateFrom] = useState(
-    submittedTranslationDirection
-  );
-  const [isConfirmationVisible, setConfirmationVisibility] = useState(false);
-  const [isTranslationDirectionChangeAllowed, setTranslationChangePermission] = useState(true);
+  const [currentSetting, setCurrentSetting] = useState('test1');
 
-  const onChangeTranslationDirection = () => {
-    if (languageToTranslateFrom === 'sourceLanguage') {
-      setLanguageToTranslateFrom('targetLanguage');
-    } else {
-      setLanguageToTranslateFrom('sourceLanguage');
+  const items = [
+    {
+      label: 'test1'
+    },
+    {
+      label: 'test2'
     }
-  };
-
-  const onUpdateConfirmationVisibility = () => {
-    setConfirmationVisibility(true);
-  };
-
-  const onSubmitTranslationDirection = () => {
-    setTranslationDirection(languageToTranslateFrom);
-    setTranslationChangePermission(false);
-    onUpdateConfirmationVisibility();
-  };
-
-  useEffect(() => {
-    if (isConfirmationVisible) {
-      const timerId = setTimeout(() => {
-        setConfirmationVisibility(false);
-        setTranslationChangePermission(true);
-      }, 3000);
-      return () => {
-        clearInterval(timerId);
-      };
-    }
-  }, [isConfirmationVisible]);
-
-  const [newSourceLanguage, newTargetLanguage] =
-    languageToTranslateFrom === 'sourceLanguage'
-      ? [sourceLanguage, targetLanguage]
-      : [targetLanguage, sourceLanguage];
+  ].filter(Boolean);
 
   return (
     <div className={styles.settingsWrapper}>
@@ -56,25 +24,18 @@ const GameSettingsWindow = () => {
         className={styles.toPreviousPageButton}
         to={`/${sourceLanguage}-${targetLanguage}/${categoryName}`}
       />
-      {isConfirmationVisible && (
-        <div className={styles.confirmationToast}>
-          {`Translation set: from -  ${newSourceLanguage} to ${newTargetLanguage} `}
-        </div>
-      )}
-      <div className={styles.settingsDetails}>
-        <div className={styles.settingTitle}>translation direction:</div>
-        <div className={styles.languagesDirection}>
-          <span className={styles.language}>{newSourceLanguage}</span>
-          <button
-            className={styles.arrowsImageButton}
-            disabled={!isTranslationDirectionChangeAllowed}
-            onClick={() => onChangeTranslationDirection()}>
-            <img src={ArrowsImage} alt="Lightning" className={styles.arrowsImage} />
-          </button>
-          <span className={styles.language}>{newTargetLanguage}</span>
-        </div>
+      <div className={styles.sideMenuWrapper}>
+        {items.map((item, index) => (
+          <SideMenu item={item} key={index} />
+        ))}
       </div>
-      <Button text={'submit'} className={styles.button} onClick={onSubmitTranslationDirection} />
+      {currentSetting === 'test1' && (
+        <TranslationDirectionSetting
+          sourceLanguage={sourceLanguage}
+          targetLanguage={targetLanguage}
+        />
+      )}
+      {currentSetting === 'test2' && <div>huray</div>}
     </div>
   );
 };
