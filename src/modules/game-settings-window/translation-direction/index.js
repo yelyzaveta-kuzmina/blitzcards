@@ -51,11 +51,10 @@ const TranslationDirectionSetting = ({ sourceLanguage, targetLanguage }) => {
     <>
       {isConfirmationVisible && (
         <div className={styles.confirmationToast}>
-          {`Translation set: from -  ${newSourceLanguage} to ${newTargetLanguage} `}
+          {`Translation set from ${newSourceLanguage} to ${newTargetLanguage} `}
         </div>
       )}
-      <div className={styles.settingsDetails}>
-        <div className={styles.settingTitle}>translation direction:</div>
+      <div className={styles.settingDetails}>
         <div className={styles.languagesDirection}>
           <span className={styles.language}>{newSourceLanguage}</span>
           <button

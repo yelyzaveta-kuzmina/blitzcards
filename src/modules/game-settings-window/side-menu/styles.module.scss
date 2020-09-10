@@ -1,1 +1,23 @@
+.sideTab {
+  color: var(--text-color-light);
+  height: 1.5em;
+  font-size: 0.7em;
+  border-bottom: 0.3px solid var(--text-color-light);
+  padding: 0.2em;
+  cursor: pointer;
 
+  &:hover {
+    color: var(--text-color);
+    background-color: #f8f8f8;
+    transition: 0.5s background-color ease;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.sideTabActive {
+  color: var(--text-color);
+  background-color: #f8f8f8;
+}

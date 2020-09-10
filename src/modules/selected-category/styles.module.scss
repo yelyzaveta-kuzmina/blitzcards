@@ -120,6 +120,7 @@
 
     .settingsButton {
       width: 7em;
+      height: 2em;
       align-self: center;
       margin-top: 0.5em;
       font-family: inherit;
@@ -132,7 +133,7 @@
       cursor: pointer;
 
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1.2);
         transition: transform 0.2s;
       }
     }

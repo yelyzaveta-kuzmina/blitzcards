@@ -7,16 +7,16 @@ import styles from './styles.module.scss';
 
 const GameSettingsWindow = () => {
   const { sourceLanguage, targetLanguage, category: categoryName } = useRouteMatch().params;
-  const [currentSetting, setCurrentSetting] = useState('test1');
+  const [currentSetting, setCurrentSetting] = useState('Translation Direction');
 
   const items = [
     {
-      label: 'test1'
+      label: 'Translation Direction'
     },
     {
-      label: 'test2'
+      label: 'Cursor'
     }
-  ].filter(Boolean);
+  ];
 
   return (
     <div className={styles.settingsWrapper}>
@@ -26,16 +26,21 @@ const GameSettingsWindow = () => {
       />
       <div className={styles.sideMenuWrapper}>
         {items.map((item, index) => (
-          <SideMenu item={item} key={index} />
+          <SideMenu
+            item={item}
+            selectedItem={currentSetting}
+            key={index}
+            onClick={() => setCurrentSetting(item.label)}
+          />
         ))}
       </div>
-      {currentSetting === 'test1' && (
+      {currentSetting === 'Translation Direction' && (
         <TranslationDirectionSetting
           sourceLanguage={sourceLanguage}
           targetLanguage={targetLanguage}
         />
       )}
-      {currentSetting === 'test2' && <div>huray</div>}
+      {currentSetting === 'Cursor' && <div>huray</div>}
     </div>
   );
 };
