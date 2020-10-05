@@ -29,9 +29,10 @@
     }
 
     .arrowsImageButton {
+      padding: 0;
+      background-color: transparent;
       border: none;
       outline: none;
-      padding: 0;
 
       .arrowsImage {
         height: 2em;
