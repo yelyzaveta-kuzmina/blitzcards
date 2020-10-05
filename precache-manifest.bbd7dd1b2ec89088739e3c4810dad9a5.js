@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ff7952afd291d4a32c1b0bcc2d13cafd",
+    "revision": "6d6b541afff9f95ae5205804d6af2b6f",
     "url": "/blitzcards/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/blitzcards/static/css/10.ba07062b.chunk.css"
   },
   {
-    "revision": "9ec4d5349ed8ed87112f",
-    "url": "/blitzcards/static/css/11.c3608ec8.chunk.css"
+    "revision": "d8c861d357e4d1811681",
+    "url": "/blitzcards/static/css/11.aeadfea3.chunk.css"
   },
   {
     "revision": "09c703f86002505566f4",
@@ -24,8 +24,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/blitzcards/static/css/6.764ccc25.chunk.css"
   },
   {
-    "revision": "1706a50c974064bd62a5",
-    "url": "/blitzcards/static/css/7.e4a645f9.chunk.css"
+    "revision": "b24bf4c4258f3a4828f8",
+    "url": "/blitzcards/static/css/7.7fb7925d.chunk.css"
   },
   {
     "revision": "b4ca7664f14af068fdf2",
@@ -52,8 +52,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/blitzcards/static/js/10.65de2ab8.chunk.js"
   },
   {
-    "revision": "9ec4d5349ed8ed87112f",
-    "url": "/blitzcards/static/js/11.7cbd0510.chunk.js"
+    "revision": "d8c861d357e4d1811681",
+    "url": "/blitzcards/static/js/11.31b1b813.chunk.js"
   },
   {
     "revision": "09c703f86002505566f4",
@@ -80,7 +80,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/blitzcards/static/js/6.62cb19a0.chunk.js.LICENSE"
   },
   {
-    "revision": "1706a50c974064bd62a5",
+    "revision": "b24bf4c4258f3a4828f8",
     "url": "/blitzcards/static/js/7.ffd8d3b0.chunk.js"
   },
   {
@@ -96,8 +96,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/blitzcards/static/js/main.03008951.chunk.js"
   },
   {
-    "revision": "ff79cfa9ab5193011e6b",
-    "url": "/blitzcards/static/js/runtime-main.1c70348b.js"
+    "revision": "4a89cd0d5d1d5c202d61",
+    "url": "/blitzcards/static/js/runtime-main.50a6c27c.js"
   },
   {
     "revision": "f978ff73d019eb37e7022f58b0360bec",
