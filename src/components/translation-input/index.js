@@ -85,7 +85,7 @@ const TranslationInput = ({ word, onChange }) => {
   return (
     <div className={styles.wrapper}>
       <div ref={caretRef} className={styles.caret}>
-        ♥
+        ★
       </div>
       {Array.from(wordMask, (symbol, index) => {
         if (symbol === '*') {
