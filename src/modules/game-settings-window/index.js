@@ -1,51 +1,25 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React from 'react';
 import { useRouteMatch } from 'react-router-dom';
+import { useSettingsSideMenu } from './state';
 import ToPreviousPageButton from '../../components/to-previous-page-button';
 import SideMenu from './side-menu';
 import TranslationDirectionSetting from './translation-direction';
+import CaretSetting from './caret';
 import styles from './styles.module.scss';
 
-const items = [
+const menuOptions = [
   {
-    label: 'Translation Direction'
+    label: 'Caret'
   },
   {
-    label: 'Cursor'
+    label: 'Translation Direction'
   }
 ];
 
-const KeyboardKey = {
-  ARROW_UP: 'ArrowUp',
-  ARROW_DOWN: 'ArrowDown'
-};
-
-// const ALLOWED_KEYS = ['ArrowUp', 'ArrowDown'];
-
 const GameSettingsWindow = () => {
   const { sourceLanguage, targetLanguage, category: categoryName } = useRouteMatch().params;
-  const [selectedSettingIndex, setSelectedSettingIndex] = useState(0);
-  const currentSetting = items[selectedSettingIndex].label;
-
-  useEffect(() => {
-    const openPreviousSettingPage = () =>
-      setSelectedSettingIndex((index) => (index - 1 + items.length) % items.length);
-    const openNextSettingPage = () =>
-      setSelectedSettingIndex((index) => (index + 1) % items.length);
-
-    const handleKeyDown = (event) => {
-      if (event.key === KeyboardKey.ARROW_UP) {
-        openPreviousSettingPage();
-      }
-      if (event.key === KeyboardKey.ARROW_DOWN) {
-        openNextSettingPage();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
+  const { selectedSettingIndex, setSelectedSettingIndex } = useSettingsSideMenu({ menuOptions });
+  const currentSetting = menuOptions[selectedSettingIndex].label;
 
   return (
     <div className={styles.settingsWrapper}>
@@ -54,7 +28,7 @@ const GameSettingsWindow = () => {
         to={`/${sourceLanguage}-${targetLanguage}/${categoryName}`}
       />
       <div className={styles.sideMenuWrapper}>
-        {items.map((item, index) => (
+        {menuOptions.map((item, index) => (
           <SideMenu
             item={item}
             selectedItem={currentSetting}
@@ -69,7 +43,7 @@ const GameSettingsWindow = () => {
           targetLanguage={targetLanguage}
         />
       )}
-      {currentSetting === 'Cursor' && <div>huray</div>}
+      {currentSetting === 'Caret' && <CaretSetting />}
     </div>
   );
 };
