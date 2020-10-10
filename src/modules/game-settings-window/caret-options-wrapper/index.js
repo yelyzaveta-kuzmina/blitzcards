@@ -3,8 +3,6 @@ import classNames from 'classnames';
 import styles from './styles.module.scss';
 
 const CaretOptionsWrapper = ({ options, caretIndex, submittedCaret, onCaretSelect }) => {
-  console.log('zz', submittedCaret);
-  console.log('ww', caretIndex);
   return (
     <div className={styles.caretsWrapper}>
       {options.map((option, index) => {

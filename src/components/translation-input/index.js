@@ -1,4 +1,5 @@
 import React, { useState, useRef, useLayoutEffect, useEffect } from 'react';
+import { useAppState } from '../../state';
 import styles from './styles.module.scss';
 
 const KeyCodes = {
@@ -40,6 +41,8 @@ const TranslationInput = ({ word, onChange }) => {
   const [wordMask, setMask] = useState('');
   const [value, setValue] = useState('');
   const caretRef = useRef();
+
+  const { submittedCaret } = useAppState();
 
   useEffect(() => {
     const mask = word.translation.replace(/\w/g, '*');
@@ -85,7 +88,7 @@ const TranslationInput = ({ word, onChange }) => {
   return (
     <div className={styles.wrapper}>
       <div ref={caretRef} className={styles.caret}>
-        ★
+        {submittedCaret}
       </div>
       {Array.from(wordMask, (symbol, index) => {
         if (symbol === '*') {
