@@ -8,6 +8,7 @@ import AddNewWordModalWindow from '../add-new-word-modal-window';
 import NoItemsExist from '../../components/items-dependent-view/no-items-exist';
 import ItemsExist from '../../components/items-dependent-view/items-exist';
 import LinkButton from '../../components/link-button';
+import TranslationDirectionSetting from '../game-settings-window/translation-direction';
 import AlertBox from '../../components/alert-box';
 import DeleteButton from '../../components/delete-button';
 import styles from './styles.module.scss';
@@ -99,10 +100,9 @@ const SelectedCategory = () => {
                   classNameButton={styles.button}
                   classNameText={styles.text}
                 />
-                <LinkButton
-                  to={`/${sourceLanguage}-${targetLanguage}/${categoryName}/game-settings`}
-                  text={'settings'}
-                  classNameButton={styles.settingsButton}
+                <TranslationDirectionSetting
+                  sourceLanguage={sourceLanguage}
+                  targetLanguage={targetLanguage}
                 />
               </div>
             </div>

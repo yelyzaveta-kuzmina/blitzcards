@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { useTheming } from '../../state/theming';
 
-export const useSettingsWindow = () => {
+export const useLayoutSetting = () => {
   const [activeSetting, setActiveSetting] = useState(null);
   const {
     backgroundColor,

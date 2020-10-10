@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAppState } from '../../../state';
 import ArrowsImage from '../../../assets/images/arrows.png';
-import Button from '../../../components/button';
 import styles from './styles.module.scss';
 
 const TranslationDirectionSetting = ({ sourceLanguage, targetLanguage }) => {
@@ -18,6 +17,7 @@ const TranslationDirectionSetting = ({ sourceLanguage, targetLanguage }) => {
     } else {
       setLanguageToTranslateFrom('sourceLanguage');
     }
+    onSubmitTranslationDirection();
   };
 
   const onUpdateConfirmationVisibility = () => {
@@ -51,22 +51,19 @@ const TranslationDirectionSetting = ({ sourceLanguage, targetLanguage }) => {
     <>
       {isConfirmationVisible && (
         <div className={styles.confirmationToast}>
-          {`Translation direction: ${newSourceLanguage} - ${newTargetLanguage} `}
+          {`Translation direction: ${newSourceLanguage} → ${newTargetLanguage} `}
         </div>
       )}
       <div className={styles.settingDetails}>
-        <div className={styles.languagesDirection}>
-          <span className={styles.language}>{newSourceLanguage}</span>
-          <button
-            className={styles.arrowsImageButton}
-            disabled={!isTranslationDirectionChangeAllowed}
-            onClick={() => onChangeTranslationDirection()}>
-            <img src={ArrowsImage} alt="Lightning" className={styles.arrowsImage} />
-          </button>
-          <span className={styles.language}>{newTargetLanguage}</span>
-        </div>
+        <span className={styles.language}>{newSourceLanguage}</span>
+        <button
+          className={styles.arrowsImageButton}
+          disabled={!isTranslationDirectionChangeAllowed}
+          onClick={() => onChangeTranslationDirection()}>
+          <img src={ArrowsImage} alt="Lightning" className={styles.arrowsImage} />
+        </button>
+        <span className={styles.language}>{newTargetLanguage}</span>
       </div>
-      <Button text={'submit'} className={styles.button} onClick={onSubmitTranslationDirection} />
     </>
   );
 };

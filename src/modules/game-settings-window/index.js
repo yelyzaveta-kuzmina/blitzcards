@@ -1,10 +1,8 @@
 import React from 'react';
-import { useRouteMatch } from 'react-router-dom';
 import { useSettingsSideMenu } from './state';
-import ToPreviousPageButton from '../../components/to-previous-page-button';
 import SideMenu from './side-menu';
-import TranslationDirectionSetting from './translation-direction';
 import CaretSetting from './caret';
+import SettingsWindow from '../settings-window/layout';
 import styles from './styles.module.scss';
 
 const menuOptions = [
@@ -12,21 +10,16 @@ const menuOptions = [
     label: 'Caret'
   },
   {
-    label: 'Translation Direction'
+    label: 'Theme/layout'
   }
 ];
 
 const GameSettingsWindow = () => {
-  const { sourceLanguage, targetLanguage, category: categoryName } = useRouteMatch().params;
   const { selectedSettingIndex, setSelectedSettingIndex } = useSettingsSideMenu({ menuOptions });
   const currentSetting = menuOptions[selectedSettingIndex].label;
 
   return (
     <div className={styles.settingsWrapper}>
-      <ToPreviousPageButton
-        className={styles.toPreviousPageButton}
-        to={`/${sourceLanguage}-${targetLanguage}/${categoryName}`}
-      />
       <div className={styles.sideMenuWrapper}>
         {menuOptions.map((item, index) => (
           <SideMenu
@@ -37,13 +30,8 @@ const GameSettingsWindow = () => {
           />
         ))}
       </div>
-      {currentSetting === 'Translation Direction' && (
-        <TranslationDirectionSetting
-          sourceLanguage={sourceLanguage}
-          targetLanguage={targetLanguage}
-        />
-      )}
       {currentSetting === 'Caret' && <CaretSetting />}
+      {currentSetting === 'Theme/layout' && <SettingsWindow />}
     </div>
   );
 };
