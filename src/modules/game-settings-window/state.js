@@ -29,5 +29,5 @@ export const useSettingsSideMenu = ({ menuOptions }) => {
     };
   }, []);
 
-  return { selectedSettingIndex };
+  return { selectedSettingIndex, setSelectedSettingIndex };
 };
