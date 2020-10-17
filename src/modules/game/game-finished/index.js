@@ -5,7 +5,7 @@ import Fireworks from './fireworks';
 import RetryGame from '../../../assets/images/retry.png';
 import styles from './styles.module.scss';
 
-const GameFinished = ({ points, time }) => {
+const GameFinished = ({ points, time, replayGame }) => {
   const { sourceLanguage, targetLanguage } = useRouteMatch().params;
 
   return (
@@ -20,7 +20,12 @@ const GameFinished = ({ points, time }) => {
         <div className={styles.results}>
           Your results: points – {points}, time - {time}
         </div>
-        <img src={RetryGame} alt="Retry" className={styles.retryIcon} />
+        <img
+          src={RetryGame}
+          alt="Retry"
+          className={styles.retryIcon}
+          onClick={() => replayGame()}
+        />
       </div>
     </>
   );

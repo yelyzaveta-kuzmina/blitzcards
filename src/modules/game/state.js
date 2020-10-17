@@ -46,6 +46,9 @@ export const useGame = () => {
   );
 
   const initGame = useCallback(() => {
+    setIsGameFinished(false);
+    setCurrentWordIndex(0);
+    setPoints(0);
     startTimer();
   }, [startTimer]);
 
@@ -61,6 +64,7 @@ export const useGame = () => {
     isGameFinished,
     timer,
     startTimer,
-    stopTimer
+    stopTimer,
+    initGame
   };
 };

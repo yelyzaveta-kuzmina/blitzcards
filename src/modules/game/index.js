@@ -9,10 +9,19 @@ import styles from './styles.module.scss';
 
 const NewGame = () => {
   const [inputValue, setInputValue] = useState('');
-  const { filteredWords, currentWordIndex, word, isGameFinished, check, points, timer } = useGame();
+  const {
+    filteredWords,
+    currentWordIndex,
+    word,
+    isGameFinished,
+    check,
+    points,
+    timer,
+    initGame
+  } = useGame();
 
   if (isGameFinished) {
-    return <GameFinished points={points} time={timer} />;
+    return <GameFinished points={points} time={timer} replayGame={initGame} />;
   }
 
   const handleNextStep = (inputValue) => {
