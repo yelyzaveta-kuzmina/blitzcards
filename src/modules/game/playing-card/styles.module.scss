@@ -5,19 +5,6 @@
   align-items: center;
   width: 45%;
   height: auto;
-  background: linear-gradient(46deg, #fad163, #ffe08d, #fbeecb);
-  background-size: 600% 600%;
-  animation: gradientAnimation 4s ease infinite;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 96%;
-  }
-  50% {
-    background-position: 100% 5%;
-  }
-  100% {
-    background-position: 0% 96%;
-  }
+  background-color: white;
+  box-shadow: 1px 7px 15px lightgrey;
 }

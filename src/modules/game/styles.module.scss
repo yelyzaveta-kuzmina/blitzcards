@@ -50,6 +50,18 @@
     justify-content: flex-end;
     font-size: 1.5em;
     color: var(--text-color);
+
+    .exitIcon {
+      width: 1em;
+      margin-left: 0.5em;
+      opacity: 0.4;
+      cursor: pointer;
+
+      &:hover {
+        transition: opacity 0.2s;
+        opacity: 1;
+      }
+    }
   }
 }
 
