@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import BarLoader from 'react-spinners/BarLoader';
 
 const LoadingComponent = () => {

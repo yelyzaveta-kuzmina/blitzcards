@@ -1,4 +1,3 @@
-import React from 'react';
 import ClassName from 'classnames';
 import styles from './styles.module.scss';
 

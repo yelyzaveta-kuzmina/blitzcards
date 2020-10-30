@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const LinkButton = ({ to, text, classNameButton, classNameText }) => {

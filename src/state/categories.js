@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
+import { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import { persistCategory, getPersistedCategory } from '../modules/categories/utils/local-storage';
 import { uuid } from 'uuidv4';
 

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import LoadingComponent from '../../components/suspense-loading';
 import DisplayBox from '../../components/display-box';

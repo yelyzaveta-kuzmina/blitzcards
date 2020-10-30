@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLayoutSetting } from './state';
 import ColorPickerBlock from './components/color-picker-block';
 import ColorConfigurationView from './color-configuration-view';

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { useLanguages } from '../../state/languages';
 import Input from '../../components/input';
 import Button from '../../components/button';

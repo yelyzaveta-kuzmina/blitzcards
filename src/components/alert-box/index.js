@@ -1,4 +1,3 @@
-import React from 'react';
 import CloseButton from '../../components/close-button';
 import styles from './styles.module.scss';
 

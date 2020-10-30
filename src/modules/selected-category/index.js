@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import { useLanguages } from '../../state/languages';
 import { useCategories } from '../../state/categories';
