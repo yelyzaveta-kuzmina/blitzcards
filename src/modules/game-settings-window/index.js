@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSettingsSideMenu } from './state';
 import SideMenu from './side-menu';
 import CaretSetting from './caret';

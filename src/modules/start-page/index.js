@@ -1,4 +1,3 @@
-import React from 'react';
 import SettingsButton from './components/settings-button';
 import MottoBox from './components/motto-box';
 import LinkButton from '../../components/link-button';

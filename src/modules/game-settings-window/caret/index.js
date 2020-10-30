@@ -1,4 +1,3 @@
-import React from 'react';
 import { useAppState } from '../../../state';
 import { caretOptions } from '../../../utils/carets';
 import CaretOptionsWrapper from '../caret-options-wrapper';

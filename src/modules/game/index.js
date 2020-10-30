@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useGame } from './state';
 import Timer from '../timer';
 import PlayingCard from './playing-card';

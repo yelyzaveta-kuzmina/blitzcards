@@ -1,4 +1,3 @@
-import React from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import ToPreviousPageButton from '../../../components/to-previous-page-button';
 import Fireworks from './fireworks';

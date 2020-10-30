@@ -1,4 +1,3 @@
-import React from 'react';
 import GameSettingsWindow from '../game-settings-window';
 
 const SettingWindow = () => {

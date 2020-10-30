@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useAppState } from '../../../state';
 import ArrowsImage from '../../../assets/images/arrows.png';
 import styles from './styles.module.scss';

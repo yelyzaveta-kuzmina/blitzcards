@@ -1,4 +1,3 @@
-import React from 'react';
 import OutsideClickHandler from 'react-outside-click-handler';
 import { SketchPicker } from 'react-color';
 
