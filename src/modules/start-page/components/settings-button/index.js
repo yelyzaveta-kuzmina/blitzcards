@@ -13,7 +13,7 @@ const SettingsButton = ({ to, activeClassName }) => {
   }, [to, history]);
 
   return (
-    <div className={styles.iconWrapper}>
+    <div id="settings-button" className={styles.iconWrapper}>
       <FontAwesomeIcon
         className={classname(activeClassName, styles.settingsIcon)}
         onClick={onClick}

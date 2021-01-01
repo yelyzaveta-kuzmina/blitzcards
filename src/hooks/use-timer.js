@@ -23,11 +23,12 @@ const useTimer = ({
     clearInterval(timerIdRef.current);
   }, []);
 
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       clearInterval(timerIdRef.current);
-    };
-  }, []);
+    },
+    []
+  );
 
   return { value: formatTime(value), startTimer, stopTimer };
 };

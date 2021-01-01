@@ -30,10 +30,11 @@ const StartPage = () => {
       )}
       <SettingsButton to="/settings" />
       <div className={styles.content}>
-        <MottoBox title={'discover, store, memorize!'} subtitle={'Learn new words every day'} />
+        <MottoBox title="discover, store, memorize!" subtitle="Learn new words every day" />
         <LinkButton
+          id="start-button"
           to="./languages"
-          text={'start'}
+          text="start"
           classNameButton={styles.button}
           classNameText={styles.text}
         />

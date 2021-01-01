@@ -12,7 +12,7 @@ const StartPageButton = ({ to, className }) => {
   }, [to, history]);
 
   return (
-    <div className={classNames(styles.button, className)}>
+    <div id="home-button" className={classNames(styles.button, className)}>
       <div onClick={onClick}>
         <LightningIcon />
       </div>

@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
-const LinkButton = ({ to, text, classNameButton, classNameText }) => {
+const LinkButton = ({ id, to, text, classNameButton, classNameText }) => {
   const history = useHistory();
 
   const onClick = useCallback(() => {
@@ -9,7 +9,7 @@ const LinkButton = ({ to, text, classNameButton, classNameText }) => {
   }, [to, history]);
 
   return (
-    <button className={classNameButton} onClick={onClick}>
+    <button id={id} className={classNameButton} onClick={onClick}>
       <span className={classNameText}>{text}</span>
     </button>
   );
