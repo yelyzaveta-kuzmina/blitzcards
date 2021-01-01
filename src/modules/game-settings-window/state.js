@@ -27,7 +27,7 @@ export const useSettingsSideMenu = ({ menuOptions }) => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, []);
+  }, [menuOptions.length]);
 
   return { selectedSettingIndex, setSelectedSettingIndex };
 };

@@ -146,6 +146,80 @@ const AppTutorial = ({ closeTutorial }) => {
     });
   }, []);
 
+  const initSettingsPageTutorial = useCallback(() => {
+    setTutorial({
+      run: true,
+      stepIndex: 0,
+      steps: [
+        {
+          target: '#side-tab-1',
+          placement: 'right',
+          title: 'Click and see how to change a theme',
+          disableBeacon: true,
+          disableOverlayClose: true,
+          hideCloseButton: true,
+          hideFooter: true,
+          spotlightClicks: true,
+          styles: {
+            buttonNext: {
+              color: '#7b7676',
+              backgroundColor: 'transparent',
+              borderRadius: 0,
+              border: '1px solid hsl(0, 2.1%, 61.4%)',
+              outline: 'none',
+              fontVariant: 'small-caps',
+              fontWeight: 300,
+              '&:hover': {
+                borderColor: 'red !important',
+                transition: 'border-color linear 0.4s'
+              }
+            },
+            buttonClose: {
+              outline: 'none',
+              color: 'transparent',
+              pointerEvents: 'none'
+            }
+          }
+        },
+        {
+          target: 'div',
+          content: (
+            <div>
+              You can always come to the start page by clicking the button doesn't matter where you
+              are currently 🏠 💛
+            </div>
+          ),
+          placement: 'right',
+          title: 'Home',
+          disableBeacon: true,
+          styles: {
+            buttonNext: {
+              color: '#7b7676',
+              backgroundColor: 'transparent',
+              borderRadius: 0,
+              border: '1px solid hsl(0, 2.1%, 61.4%)',
+              outline: 'none',
+              fontVariant: 'small-caps',
+              fontWeight: 300,
+              '&:hover': {
+                borderColor: 'red !important',
+                transition: 'border-color linear 0.4s'
+              }
+            },
+            buttonClose: {
+              outline: 'none',
+              color: 'transparent',
+              pointerEvents: 'none'
+            }
+          }
+        },
+        {
+          target: 'div'
+        }
+      ]
+    });
+  }, []);
+
   useEffect(() => {
     const url = window.location.href;
 
@@ -154,9 +228,9 @@ const AppTutorial = ({ closeTutorial }) => {
     }
 
     if (url.includes('settings')) {
-      initStartPageTutorial();
+      setTimeout(() => initSettingsPageTutorial(), 500);
     }
-  }, [isAppTutorialShown, initStartPageTutorial]);
+  }, [isAppTutorialShown, initSettingsPageTutorial]);
 
   const handleJoyrideCallback = (data) => {
     const { action, index, type, status } = data;
@@ -167,17 +241,13 @@ const AppTutorial = ({ closeTutorial }) => {
       if (index === 4) {
         history.push('./settings');
         setAppTutorialVisibility(true);
-
-        console.log('tutorialdss', tutorial);
         return;
       }
     }
 
     if ([EVENTS.STEP_AFTER, EVENTS.TARGET_NOT_FOUND].includes(type)) {
       if (index === 3) {
-        console.log('1');
         setTutorial({ ...tutorial, stepIndex, run: false });
-        console.log('tutorial', tutorial);
         return;
       }
 

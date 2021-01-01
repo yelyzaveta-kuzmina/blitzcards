@@ -1,9 +1,10 @@
 import classNames from 'classnames';
 import styles from './styles.module.scss';
 
-const SideMenu = ({ item, selectedItem, onClick }) => {
+const SideMenu = ({ id, item, selectedItem, onClick }) => {
   return (
     <div
+      id={id}
       className={
         item.label === selectedItem
           ? classNames(styles.sideTab, styles.sideTabActive)

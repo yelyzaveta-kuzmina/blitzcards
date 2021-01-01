@@ -22,7 +22,6 @@ const StartPage = () => {
     setAppTutorialVisibility(false);
   }, [setAppTutorialVisibility]);
 
-  console.log(isAppTutorialShown);
   return (
     <>
       {isAppTutorialShown && (
