@@ -10,15 +10,13 @@ import {
   getPersistedDisplayColor
 } from '../utils/local-storage';
 
-const DEFAULT_BACKGRONUD_COLOR = '#5d5abf';
+const DEFAULT_BACKGROUND_COLOR = '#4399AF';
 const DEFAULT_TEXT_COLOR = '#7b7676';
 const DEFAULT_DISPLAY_COLOR = 'white';
 
 const persistedBackgroundColor = getPersistedBackgroundColor();
 const persistedTextColor = getPersistedTextColor();
-const lighterTextColor = color(persistedTextColor)
-  .lighten(0.3)
-  .toString();
+const lighterTextColor = color(persistedTextColor).lighten(0.3).toString();
 const persistedDisplayColor = getPersistedDisplayColor();
 
 setCssVariable('--background-color', persistBackgroundColor);
@@ -30,7 +28,7 @@ const ThemingContext = createContext({});
 
 const ThemingProvider = ({ children }) => {
   const [backgroundColor, setBackgroundColor] = useState(
-    persistedBackgroundColor || DEFAULT_BACKGRONUD_COLOR
+    persistedBackgroundColor || DEFAULT_BACKGROUND_COLOR
   );
   const [textColor, setTextColor] = useState(persistedTextColor || DEFAULT_TEXT_COLOR);
   const [displayColor, setDisplayColor] = useState(persistedDisplayColor || DEFAULT_DISPLAY_COLOR);
@@ -41,9 +39,7 @@ const ThemingProvider = ({ children }) => {
   }, [backgroundColor]);
 
   useEffect(() => {
-    const lighterTextColor = color(textColor)
-      .lighten(0.3)
-      .toString();
+    const lighterTextColor = color(textColor).lighten(0.3).toString();
     setCssVariable('--text-color', textColor);
     setCssVariable('--text-color-light', lighterTextColor);
     persistTextColor(textColor);

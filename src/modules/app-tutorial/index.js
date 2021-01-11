@@ -1,8 +1,6 @@
 const AppTutorial = () => {
   return (
-    <div>
-      <div>123 motherfucker</div>
-    </div>
+    <div>Hi, nice to meet you there. Just check a small tutorial and get to know the platform </div>
   );
 };
 

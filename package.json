@@ -26,6 +26,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "^4.0.0",
     "react-spinners": "^0.8.0",
+    "react-use": "^15.3.8",
     "uuidv4": "^6.0.7"
   },
   "scripts": {
