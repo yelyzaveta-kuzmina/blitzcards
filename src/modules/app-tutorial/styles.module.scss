@@ -1,0 +1,23 @@
+.tutorialWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  background-color: var(--display-color);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.next {
+  align-self: center;
+  font-size: 3em;
+  color: #ebe1e1;
+  cursor: pointer;
+
+  &:hover {
+    transition: color 0.2s;
+    color: #cfc6c6;
+  }
+}

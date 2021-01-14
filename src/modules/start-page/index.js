@@ -12,7 +12,6 @@ const StartPage = () => {
 
   if (isFirstVisit) {
     setTutorialShown(true);
-    setIsFirstVisit(false);
   }
 
   return (
