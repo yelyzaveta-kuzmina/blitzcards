@@ -1,10 +1,10 @@
-import samplePic from '../../assets/images/tutorial/Sample pic.png';
+import startPage from '../../assets/images/tutorial/start-page.png';
 
 const tutorialSteps = [
   {
     title: 'Start page',
     description: 'Here is a start page where you can ... blah blah',
-    pic: samplePic
+    pic: startPage
   },
   {
     settingsPage: 'Settings page',

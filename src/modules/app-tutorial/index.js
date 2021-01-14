@@ -22,9 +22,11 @@ const AppTutorial = ({ onAppTutorialClose }) => {
 
   return (
     <div className={styles.tutorialWrapper}>
-      <div>{currentStepContent.title}</div>
-      <div>{currentStepContent.description}</div>
-      <img style={{ width: 500 }} src={currentStepContent.pic} alt="" />
+      <div className={styles.title}>{currentStepContent.title}</div>
+      <div className={styles.details}>
+        <div className={styles.description}>{currentStepContent.description}</div>
+        <img className={styles.image} src={currentStepContent.pic} alt="" />
+      </div>
       <ToNextStepButton className={styles.next} onClick={onHandleNextStep} />
     </div>
   );
