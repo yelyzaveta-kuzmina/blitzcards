@@ -14,9 +14,14 @@ const StartPage = () => {
     setTutorialShown(true);
   }
 
+  const onAppTutorialClose = () => {
+    setTutorialShown(false);
+    setIsFirstVisit(false);
+  };
+
   return (
     <>
-      {isTutorialShown && <AppTutorial />}
+      {isTutorialShown && <AppTutorial onAppTutorialClose={onAppTutorialClose} />}
       <SettingsButton to="/settings" />
       <div className={styles.content}>
         <MottoBox title={'discover, store, memorize!'} subtitle={'Learn new words every day'} />
