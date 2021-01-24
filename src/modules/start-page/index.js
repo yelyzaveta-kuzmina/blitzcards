@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useLocalStorage } from 'react-use';
 import { useAppState } from '../../state';
 import AppTutorial from '../app-tutorial';
 import SettingsButton from './components/settings-button';
 import MottoBox from './components/motto-box';
 import LinkButton from '../../components/link-button';
+import WelcomeMessage from '../app-tutorial/welcomeMessage';
 import styles from './styles.module.scss';
 
 const StartPage = () => {
@@ -18,7 +19,19 @@ const StartPage = () => {
     if (isFirstVisit) {
       setWelcomeMessage(true);
     }
-  }, []);
+  }, [isFirstVisit]);
+
+  const onTutorialAccept = useCallback(() => {
+    setTutorialAccepted(true);
+    setWelcomeMessage(false);
+    setTutorialShown(true);
+  }, [setTutorialShown]);
+
+  const onTutorialDecline = useCallback(() => {
+    setTutorialAccepted(false);
+    setWelcomeMessage(false);
+    setIsFirstVisit(false);
+  }, [setIsFirstVisit]);
 
   const onAppTutorialClose = () => {
     setTutorialShown(false);
@@ -28,25 +41,7 @@ const StartPage = () => {
   return (
     <>
       {isWelcomeMessage && (
-        <div>
-          Hi
-          <button
-            onClick={() => {
-              setTutorialAccepted(true);
-              setWelcomeMessage(false);
-              setTutorialShown(true);
-            }}>
-            Accept
-          </button>
-          <button
-            onClick={() => {
-              setTutorialAccepted(false);
-              setWelcomeMessage(false);
-              setIsFirstVisit(false);
-            }}>
-            Decline
-          </button>
-        </div>
+        <WelcomeMessage onTutorialAccept={onTutorialAccept} onTutorialDecline={onTutorialDecline} />
       )}
       {isTutorialAccepted && <AppTutorial onAppTutorialClose={onAppTutorialClose} />}
       {!isTutorialShown && !isWelcomeMessage && (

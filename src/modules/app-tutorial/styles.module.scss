@@ -1,12 +1,33 @@
+.welcomeMessageWrapper,
 .tutorialWrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   position: absolute;
   background-color: var(--display-color);
   width: 100vw;
   height: 100vh;
   z-index: 1;
+
+  .welcomeMessage {
+    display: flex;
+    margin-bottom: 5px;
+  }
+
+  .buttons {
+    display: flex;
+    padding: 2em;
+
+    .button {
+      width: 12em;
+      height: 3em;
+      padding: 0.3em;
+      margin-right: 2em;
+      font-size: 0.7em;
+      align-self: flex-end;
+    }
+  }
 
   .title {
     display: flex;
