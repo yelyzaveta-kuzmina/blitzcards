@@ -25,7 +25,11 @@ const AppTutorial = ({ onAppTutorialClose }) => {
       <div className={styles.title}>{currentStepContent.title}</div>
       <div className={styles.details}>
         <div className={styles.description}>{currentStepContent.description}</div>
-        <img className={styles.image} src={currentStepContent.pic} alt="" />
+        {currentStepContent.pics.length > 1 && <div>Rendering more than 2 pics</div>}
+        {currentStepContent.pics.length === 1 &&
+          currentStepContent.pics.map((image) => (
+            <img className={styles.image} src={image} alt="" />
+          ))}
       </div>
       <ToNextStepButton className={styles.next} onClick={onHandleNextStep} />
     </div>
