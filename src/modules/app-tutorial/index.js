@@ -7,13 +7,9 @@ const AppTutorial = ({ onAppTutorialClose }) => {
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [currentStepContent, setCurrentStepContent] = useState(tutorialSteps[currentStepIndex]);
 
-  console.log(currentStepIndex);
-  console.log(currentStepContent);
-
   const onHandleNextStep = useCallback(() => {
     if (currentStepIndex + 1 === tutorialSteps.length) {
       onAppTutorialClose();
-      alert('finish');
       return;
     }
     setCurrentStepIndex(currentStepIndex + 1);
