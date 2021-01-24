@@ -19,7 +19,7 @@ const StartPage = () => {
     if (isFirstVisit) {
       setWelcomeMessage(true);
     }
-  }, [isFirstVisit]);
+  }, [isFirstVisit, setTutorialShown]);
 
   const onTutorialAccept = useCallback(() => {
     setTutorialAccepted(true);
@@ -33,10 +33,11 @@ const StartPage = () => {
     setIsFirstVisit(false);
   }, [setIsFirstVisit]);
 
-  const onAppTutorialClose = () => {
+  const onAppTutorialClose = useCallback(() => {
     setTutorialShown(false);
     setIsFirstVisit(false);
-  };
+    setTutorialAccepted(false);
+  }, [setTutorialShown, setIsFirstVisit]);
 
   return (
     <>

@@ -10,6 +10,13 @@
   height: 100vh;
   z-index: 1;
 
+  .closeButton {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    margin: 5px;
+  }
+
   .welcomeMessage {
     display: flex;
     margin-bottom: 5px;

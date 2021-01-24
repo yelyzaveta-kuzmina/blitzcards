@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
-import tutorialSteps from './tutorialSteps';
 import ToNextStepButton from '../../components/to-next-step-button';
+import CloseButton from '../../components/close-button';
+import tutorialSteps from './tutorialSteps';
 import styles from './styles.module.scss';
 
 const AppTutorial = ({ onAppTutorialClose }) => {
@@ -18,13 +19,14 @@ const AppTutorial = ({ onAppTutorialClose }) => {
 
   return (
     <div className={styles.tutorialWrapper}>
+      <CloseButton className={styles.closeButton} onClick={onAppTutorialClose} />
       <div className={styles.title}>{currentStepContent.title}</div>
       <div className={styles.details}>
         <div className={styles.description}>{currentStepContent.description}</div>
         {currentStepContent.pics.length > 1 && <div>Rendering more than 2 pics</div>}
         {currentStepContent.pics.length === 1 &&
-          currentStepContent.pics.map((image) => (
-            <img className={styles.image} src={image} alt="" />
+          currentStepContent.pics.map((image, index) => (
+            <img className={styles.image} src={image} alt="" key={index} />
           ))}
       </div>
       <ToNextStepButton className={styles.next} onClick={onHandleNextStep} />
