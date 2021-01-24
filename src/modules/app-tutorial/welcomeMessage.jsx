@@ -5,7 +5,7 @@ const WelcomeMessage = ({ onTutorialAccept, onTutorialDecline }) => {
   return (
     <div className={styles.welcomeMessageWrapper}>
       <span className={styles.welcomeMessage}>
-        Happy to see you using <b>blitzcards</b> - hope you will enjoy.
+        Happy to see you using blitzcards - hope you will enjoy.
       </span>
       <span className={styles.welcomeMessage}>
         There is a small optional, but recommended app tutorial to go through 🙂

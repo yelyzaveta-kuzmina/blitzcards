@@ -10,19 +10,27 @@ import styles from './styles.module.scss';
 
 const NewGame = () => {
   const [inputValue, setInputValue] = useState('');
+  const [exitGame, setExitGame] = useState(false);
+
   const {
     filteredWords,
     currentWordIndex,
     word,
     isGameFinished,
+    setIsGameFinished,
     check,
     points,
     timer,
     initGame
   } = useGame();
 
-  if (isGameFinished) {
+  if (isGameFinished && !exitGame) {
     return <GameFinished points={points} time={timer} replayGame={initGame} />;
+  }
+
+  if (exitGame) {
+    const url = window.location.href;
+    window.location.href = url.replace('game', '');
   }
 
   const handleNextStep = (inputValue) => {
@@ -43,7 +51,15 @@ const NewGame = () => {
       <ToNextStepButton className={styles.next} onClick={() => handleNextStep(inputValue)} />
       <div className={styles.progress}>
         {currentWordIndex + 1}/{filteredWords.length}
-        <img src={ExitGame} alt="Lightning" className={styles.exitIcon} />
+        <img
+          src={ExitGame}
+          alt="Lightning"
+          className={styles.exitIcon}
+          onClick={() => {
+            setIsGameFinished(true);
+            setExitGame(true);
+          }}
+        />
       </div>
     </div>
   );

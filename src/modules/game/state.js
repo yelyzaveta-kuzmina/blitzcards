@@ -52,7 +52,7 @@ export const useGame = () => {
     startTimer();
   }, [startTimer]);
 
-  useEffect(initGame, []);
+  useEffect(initGame, [initGame]);
 
   return {
     filteredWords,
@@ -62,6 +62,7 @@ export const useGame = () => {
     next,
     points,
     isGameFinished,
+    setIsGameFinished,
     timer,
     startTimer,
     stopTimer,
