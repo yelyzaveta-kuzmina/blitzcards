@@ -1,39 +1,39 @@
-import startPage from '../../assets/images/tutorial/start-page.png';
-import settingsCarret from '../../assets/images/tutorial/settings-carret.png';
-import settingsLayout from '../../assets/images/tutorial/settings-layout.png';
-import preGame from '../../assets/images/tutorial/pre-game.png';
-import gameMode from '../../assets/images/tutorial/game-mode.png';
+import startPage from '../../assets/images/tutorial/start-page.gif';
+import settingsCaret from '../../assets/images/tutorial/settings-page.gif';
+import preGame from '../../assets/images/tutorial/pre-game.gif';
+import gameMenu from '../../assets/images/tutorial/game-menu.gif';
+import game from '../../assets/images/tutorial/game.gif';
 
 const tutorialSteps = [
   {
     title: 'Start page',
-    description: 'Here is a start page where you can ... blah blah',
+    description:
+      'Here is a start page where where the whole journey starts - just click a button in the middle. Besides that you can see a thunder on the top left corner that can bring you to a start page does not matter where you are. On the right top corner you find settings.',
     pics: [startPage]
   },
   {
-    settingsPage: 'Settings page',
-    description: 'Here is a Settings page where you can ... blah blah',
-    pics: [settingsCarret, settingsLayout]
+    title: 'Settings page',
+    description:
+      'In settings you can play a little bit with the layout - just use your creativity :)',
+    pics: [settingsCaret]
   },
   {
-    settingsPage: 'Add new language/category/word',
-    description: 'Here you can add ... blah blah',
+    title: 'Add new language/category/word',
+    description:
+      'It is a road you need to go through to start playing. The algorithm and needed actions are very simple. Do you know already what language you wanna learn? Then just create a container that will keep all words you want to remember which calls "category", but in the end it can be named however you wish.',
     pics: [preGame]
   },
   {
-    settingsPage: 'Pre-game menu',
-    description: 'Here you can add/manage ... blah blah',
-    pics: [preGame]
+    title: 'Game menu',
+    description:
+      'Once you have at least one word in your category container you can start a game. You can manage the category by adding and removing words, also you can select a desired direction of translation during the game.',
+    pics: [gameMenu]
   },
   {
-    settingsPage: 'Game itself',
-    description: 'Here you can play ... blah blah',
-    pics: [gameMode]
-  },
-  {
-    settingsPage: 'Important info',
-    description: 'All data is stored in local storage, if cleaning you will loose it',
-    pics: ['somePicImport']
+    title: 'Game',
+    description:
+      'And let the game begin! Good luck with the expansion of vocabulary. When the game finished you will see how many points you have got and how quick you were. Not satisfied with results - give it another try :)',
+    pics: [game]
   }
 ];
 
